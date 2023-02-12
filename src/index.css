@@ -1,13 +1,55 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --base-bg-color: 254, 89, 68;
+    --base-secondary-color: 255, 255, 255;
+    --base-action-color: 255, 211, 64;
+    --base-bg-color-highlight: 240, 75, 56;
+    --base-bg-color-highlight-2: 241, 74, 55;
+
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(var(--base-bg-color-highlight)); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: white; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+body{
+    font-family: 'Itim', cursive;
+    overflow-x: hidden;
+}
+
+.scroll-snap-container{
+    /* scroll-snap-type: y proximity; */
+}
+
+.scroll-snap-child{
+    scroll-snap-align: center;
+}
+.animation-duration-300{
+    animation-duration: 500ms;
+}
+
+.animate__animated{
+  -webkit-animation-fill-mode:none;
+  animation-fill-mode: none;
+}
+html{
+   scroll-behavior: smooth
 }

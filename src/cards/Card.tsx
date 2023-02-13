@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import Button from '../Components/Button';
+import React, {useState} from 'react';
 import {Icon} from '@iconify/react';
 function Card(props: {
 	number: String;

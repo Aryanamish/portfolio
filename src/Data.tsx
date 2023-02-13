@@ -1,5 +1,3 @@
-import project_sample from './assets/project_1.png';
-import cert_sample from './assets/cert_sample.png';
 import portfolio from './assets/projects/portfolio.png';
 import foob_blog from './assets/projects/food_blog.png';
 import steganography from './assets/projects/steganography.png';

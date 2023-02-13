@@ -1,30 +1,9 @@
-import React, {useEffect, useState} from 'react';
-import Icons from './Icons';
+import React from 'react';
 import Sphere from './Sphere';
-import anime from 'animejs/lib/anime.es.js';
 import ExtraSkills from './ExtraSkills';
 import Data from '../Data';
 
 function Skills() {
-	useEffect(() => {
-		const timeline = anime.timeline();
-		// timeline.add({
-		// 	targets: '.icon-spin',
-		// 	translateX: () => ['-100%', '90%'],
-		// 	delay: anime.stagger(300),
-		// 	opacity: {
-		// 		value: '1',
-		// 		delay: anime.stagger(300),
-		// 	},
-		// });
-		// timeline.add({
-		// 	targets: '.icon-spin',
-		// 	delay: anime.stagger(300),
-		// 	opacity: {
-		// 		value: '1',
-		// 	},
-		// });
-	}, []);
 	return (
 		<>
 			<div className="flex flex-col gap-10">

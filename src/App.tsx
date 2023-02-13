@@ -1,8 +1,6 @@
-import {useEffect, useState} from 'react';
 import Projects from './cards/Projects';
 import Certificate from './certification/Certifications';
 import ScrollAnimate from './Components/ScrollAnimate';
-import Contact from './contact/Contact';
 import Hero from './hero/Hero';
 import NavBar from './navbar/NavBar';
 import Skills from './skills/Skills';

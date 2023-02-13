@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import Button from '../Components/Button';
+import React, {useEffect} from 'react';
 
 import {Icon} from '@iconify/react';
 
@@ -13,9 +12,6 @@ function Cert(props: {
 	className?: string;
 	animateClass?: string;
 }) {
-	const [isMouseOver1, setIsMouseOver1] = useState(false);
-	const [isMouseOver2, setIsMouseOver2] = useState(false);
-	const [animate, setAnimate] = useState(false);
 	useEffect(() => {
 		const animate_class = 'animate__flipInX';
 		document.querySelectorAll('.animate-title').forEach((e) => {
@@ -24,7 +20,7 @@ function Cert(props: {
 			setTimeout(() => {
 				e.classList.remove('opacity-0');
 				e.classList.add(animate_class);
-			}, 10);
+			}, 100);
 		});
 	}, [props.title]);
 	return (

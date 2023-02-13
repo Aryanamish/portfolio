@@ -9,11 +9,13 @@ function ExtraSkills(props: {
 }) {
 	return (
 		<div>
-			<div className="flex justify-center items-center flex-col lg:flex-row gap-10">
-				<div>
-					<span className="text-secondary text-5xl">{props.text} :</span>
+			<div className="flex justify-center items-start flex-col lg:flex-row gap-10">
+				<div className="">
+					<span className="text-secondary text-5xl flex justify-start items-center">
+						{props.text + ' :'}
+					</span>
 				</div>
-				<div className="flex justify-start items-center gap-6">
+				<div className="flex gap-2 md:gap-5 max-w-xl flex-wrap">
 					{props.icons.map((icon) => {
 						return (
 							<Icons

@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
 :root{
     --base-bg-color: 254, 89, 68;
     --base-secondary-color: 255, 255, 255;
@@ -52,4 +52,17 @@ body{
 }
 html{
    scroll-behavior: smooth
+}
+
+.custom-font{
+    font-weight: 200;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+}
+
+.line-clamp{
+     -webkit-line-clamp: 2;
+     -webkit-box-orient: vertical;
+       display: -webkit-box;
+
 }

@@ -67,6 +67,10 @@ const Data = {
 					name: 'AWS',
 					icon: 'logos:aws',
 				},
+				{
+					name: 'AWS',
+					icon: 'skill-icons:netlify-light',
+				},
 			],
 		},
 	],
@@ -91,6 +95,10 @@ const Data = {
 			icon: 'simple-icons:geeksforgeeks',
 			links: 'https://auth.geeksforgeeks.org/user/aryanamish/practice/',
 		},
+		{
+			icon: 'mdi:email-outline',
+			links: 'mailto:aryanamish2002+portfolio@gmail.com',
+		},
 	],
 	projects: [
 		{
@@ -113,7 +121,7 @@ const Data = {
 			domain: 'Web Development',
 			website: 'https://www.vorkinsta.com/',
 			image: vorkinsta,
-			title: 'Vorkinsta (Upwork-like Website)',
+			title: 'Vorkinsta',
 			desc: (
 				<>
 					I was engaged as a Full-Stack Developer to enhance the user

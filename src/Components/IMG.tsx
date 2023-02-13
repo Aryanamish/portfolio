@@ -24,7 +24,7 @@ function IMG(props: {
 			)}
 			<img
 				src={props.src}
-				className="w-full h-full"
+				className={'w-full h-full ' + (imgStatus ? '' : 'hidden')}
 				alt={props.alt}
 				onLoad={() => setImgStatus(true)}
 			/>

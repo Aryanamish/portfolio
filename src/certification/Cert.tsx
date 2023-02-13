@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 
 import {Icon} from '@iconify/react';
+import IMG from '../Components/IMG';
 
 function Cert(props: {
 	title: string;
@@ -27,22 +28,22 @@ function Cert(props: {
 		<div
 			id={props.title}
 			className={
-				'flex bg-skin-fill-highlight items-center gap-10 rounded-lg flex-col lg:flex-row border-2 lg:mx-64 border-skin-fill-highlight-2 ' +
+				'flex bg-skin-fill-highlight items-center gap-10 rounded-lg flex-col-reverse lg:flex-row border-2 lg:mx-64 border-skin-fill-highlight-2 ' +
 				props.className
 			}>
 			<div className="relative flex flex-col items-center lg:items-start max-w-2xl justify-center">
-				<div className="m-8 ml-10">
+				<div className="m-8 ml-10 lg:h-96 h-52">
 					<div
 						className={
 							props.animateClass +
-							' animate__animated animate-title pl-2'
+							' animate__animated animate-title  pl-2 h-full flex flex-col items-start justify-center'
 						}>
 						<div className="mb-6">
 							<span className="text-4xl text-skin-secondary font-extrabold">
 								{props.title}
 							</span>
 						</div>
-						<div>
+						<div className="">
 							<span className="text-sm text-skin-secondary">
 								{props.desc}
 							</span>
@@ -72,9 +73,13 @@ function Cert(props: {
 					</div>
 				</div>
 			</div>
-			<div className="hover:scale-110 transition-all bg-white p-1 m-8 rounded-md animate__animated animate-title">
-				<div className="">
-					<img src={props.image} alt="certificate" />
+			<div className="hover:scale-125 transition-all bg-white p-1 m-8 rounded-md animate__animated animate-title ">
+				<div className="lg:w-96 lg:h-96 flex justify-center items-center">
+					<IMG src={props.image + ''} alt={props.title}>
+						<div className="w-full h-full flex justify-center items-center flex-col gap-4">
+							<div className="animate-spin inline-block w-8 h-8 border-4 border-x-0 rounded-full border-fill"></div>
+						</div>
+					</IMG>
 				</div>
 			</div>
 		</div>

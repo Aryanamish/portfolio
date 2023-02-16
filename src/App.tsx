@@ -9,7 +9,7 @@ import Socials from './socials/Socials';
 function App() {
 	return (
 		<>
-			<div className="flex justify-center items-center w-full h-full ">
+			<div className="flex justify-center items-center w-full h-full bg-fill">
 				<div className="bg-skin-fill container">
 					<div className="scroll-snap-container px-2 flex gap-28 flex-col overflow-y-auto relative">
 						<div className="flex flex-col gap-20 lg:gap-5">

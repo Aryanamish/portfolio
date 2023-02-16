@@ -17,7 +17,7 @@ function Card(props: {
 		<div
 			onMouseEnter={() => setMouseOver(true)}
 			onMouseLeave={() => setMouseOver(false)}
-			className="flex w-64 bg-skin-fill-highlight rounded-md  transition-all mb-20">
+			className="flex md:w-64 bg-skin-fill-highlight rounded-md  transition-all">
 			<div className="flex flex-col gap-3">
 				<div className="p-4 pb-0">
 					<div className="flex flex-col">
@@ -29,10 +29,10 @@ function Card(props: {
 					</div>
 					<div
 						className={
-							(mouseOver ? 'scale-105 duration-300 ' : ' ') +
-							'bg-white flex justify-center items-center p-2 rounded-md transition-all h-60'
+							(mouseOver ? 'scale-105 duration-300  ' : ' ') +
+							'bg-white flex justify-center items-center p-2 rounded-md transition-all h-60 '
 						}>
-						<IMG src={props.image + ''} alt="Logo" className="">
+						<IMG src={props.image} alt="Logo" className="">
 							<div className="w-full h-full flex justify-center items-center flex-col gap-4">
 								<div className="animate-spin inline-block w-8 h-8 border-4 border-x-0 rounded-full border-fill"></div>
 							</div>

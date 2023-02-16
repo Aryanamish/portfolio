@@ -5,7 +5,7 @@ import Data from '../Data';
 function Projects() {
 	return (
 		<div>
-			<div className="flex gap-x-4 gap-y-14 flex-wrap justify-center">
+			<div className="flex gap-x-4 gap-y-10 flex-wrap justify-center">
 				{Data.projects.map((e, idx) => {
 					return (
 						<Card

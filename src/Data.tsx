@@ -165,28 +165,32 @@ const Data = {
 
 	certificates: [
 		{
-			title: 'Google Cloud Computing',
+			label: 'Google Cloud Computing',
 			desc: 'The Google Cloud Digital Leader Certificate is a professional certification program designed to demonstrate proficiency in Google Cloud technologies and solutions. It covers a range of topics including Google Cloud architecture, data and storage, security, application development and deployment, and machine learning.',
 			link: 'https://link',
-			image: digital_leader,
+			imagePath: digital_leader,
+			provider: 'Google Cloud',
 		},
 		{
-			title: 'Dev Wiz Hackathon',
+			label: 'Dev Wiz Hackathon',
 			desc: 'Won second price in Dev Wiz Hackathon, which was conducted by Sathyabama Institute of Science and Technology.',
 			link: 'https://link',
-			image: dev_wiz,
+			imagePath: dev_wiz,
+			provider: 'Sathyabama Institute of science and Technology',
 		},
 		{
-			title: 'Codingo',
+			label: 'Codingo',
 			desc: 'Coding Contest Held in Sathyabama Institute of Technology, the contest was based on DSA questions.',
 			link: '',
-			image: codingo,
+			imagePath: codingo,
+			provider: 'Sathyabama Institute of science and Technology',
 		},
 		{
-			title: 'NPTEL - Datastructure and Algorithm',
+			label: 'NPTEL - Datastructure and Algorithm',
 			desc: 'This course covered essential topics such as algorithms, data structures, and programming concepts, and provided a solid foundation in developing efficient and optimized solutions.',
 			link: 'https://link',
-			image: nptel,
+			imagePath: nptel,
+			provider: 'NPTEL',
 		},
 	],
 };

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Data from '../Data';
 import Cert from './Cert';
+import Certificate2 from './Certificate2';
 function Certifications() {
 	const [certData, setCertData] = useState(0);
 
@@ -15,8 +16,8 @@ function Certifications() {
 		setCertData(new_num);
 	};
 	return (
-		<div className="flex flex-row">
-			<Cert
+		<div className="flex flex-row justify-center items-center">
+			{/* <Cert
 				title={Data.certificates[certData].title}
 				desc={Data.certificates[certData].desc}
 				link={Data.certificates[certData].link}
@@ -24,7 +25,8 @@ function Certifications() {
 				next={setNext}
 				prev={setPrev}
 				className={' animate__animated '}
-			/>
+			/> */}
+			<Certificate2></Certificate2>
 		</div>
 	);
 }

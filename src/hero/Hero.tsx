@@ -17,7 +17,7 @@ function Hero() {
 	});
 	return (
 		<div className="h-full w-full">
-			<div className="flex flex-col lg:flex-row gap-20 ">
+			<div className="flex flex-col lg:flex-row gap-20">
 				<div className="flex flex-col flex-1 items-center lg:items-end justify-center">
 					<div>
 						<span className="text-skin-highlight text-xl">I'm ,</span>
@@ -48,12 +48,13 @@ function Hero() {
 						/>
 					</div>
 				</div>
-				<div className="flex justify-center items-center md:pl-20">
+				<div className="justify-center items-center  hidden lg:flex pr-10">
 					<IMG
 						src={heros}
 						alt="Logo"
-						className="lg:w-[715px] lg:h-[738px] h-96 w-96"
-						loading_text="logo.png..."></IMG>
+						className="lg:w-[577px] lg:h-[600px] h-96 w-96"
+						loading_text="logo.png..."
+					/>
 					{/* <img src={heros} alt="Logo" /> */}
 				</div>
 			</div>

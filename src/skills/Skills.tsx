@@ -14,7 +14,7 @@ function Skills() {
 					for (let i = 0; i < e.data.length; i++) {
 						d.push(e.data[i].icon);
 					}
-					return <ExtraSkills text={e.text} icons={d} />;
+					return <ExtraSkills key={e.text} text={e.text} icons={d} />;
 				})}
 			</div>
 		</>

@@ -11,6 +11,8 @@ function makeid(length: number) {
 	}
 	return result;
 }
+
+// toggleClass which will be toggled alternative to the animation class
 function ScrollAnimate(props: {
 	className?: string;
 	children: any;

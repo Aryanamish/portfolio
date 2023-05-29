@@ -11,13 +11,26 @@ function Card(props: {
 	github?: string;
 	website?: string;
 }) {
+	const [showIcon, setShowIcon] = React.useState(false);
+	const descRef = React.useRef<HTMLDivElement>(null);
+	React.useEffect(() => {
+		const textElement = descRef.current;
+		function isEllipsisActive(e: any) {
+			var tolerance = 2; // In px. Depends on the font you are using
+			return e.offsetWidth + tolerance < e.scrollWidth;
+		}
+		if (textElement) {
+			console.log(isEllipsisActive(textElement));
+			setShowIcon(!isEllipsisActive(textElement));
+		}
+	}, [props.desc]);
 	const [mouseOver, setMouseOver] = useState(false);
 	const [showMore, setShowMore] = useState(false);
 	return (
 		<div
 			onMouseEnter={() => setMouseOver(true)}
 			onMouseLeave={() => setMouseOver(false)}
-			className="flex w-64 bg-skin-fill-highlight rounded-md  transition-all mb-20">
+			className="flex md:w-64 bg-skin-fill-highlight-2 rounded-lg  transition-all backdrop-filter backdrop-blur-md">
 			<div className="flex flex-col gap-3">
 				<div className="p-4 pb-0">
 					<div className="flex flex-col">
@@ -29,10 +42,10 @@ function Card(props: {
 					</div>
 					<div
 						className={
-							(mouseOver ? 'scale-105 duration-300 ' : ' ') +
-							'bg-white flex justify-center items-center p-2 rounded-md transition-all h-60'
+							(mouseOver ? 'scale-105 duration-300  ' : ' ') +
+							'bg-white flex justify-center items-center p-2 rounded-md transition-all h-50 '
 						}>
-						<IMG src={props.image + ''} alt="Logo" className="">
+						<IMG src={props.image} alt="Logo" className="">
 							<div className="w-full h-full flex justify-center items-center flex-col gap-4">
 								<div className="animate-spin inline-block w-8 h-8 border-4 border-x-0 rounded-full border-fill"></div>
 							</div>
@@ -46,10 +59,11 @@ function Card(props: {
 						</div>
 					</div>
 				</div>
-				<div className="relative h-40 transition-all">
+				<div className="relative h-32 transition-all">
 					<div className=" bg-fill-highlight p-4 pt-0 rounded-md">
 						<div className="flex flex-col ">
 							<div
+								ref={descRef}
 								className={
 									'text-sm text-skin-secondary font-extralight tracking-wider transition-all ' +
 									(showMore
@@ -97,10 +111,14 @@ function Card(props: {
 										(showMore ? 'rotate-180' : '')
 									}
 									onClick={() => setShowMore(!showMore)}>
-									<Icon
-										icon="ph:caret-double-down-bold"
-										className="w-full h-full"
-									/>
+									{showIcon ? (
+										<Icon
+											icon="ph:caret-double-down-bold"
+											className="w-full h-full cursor-pointer"
+										/>
+									) : (
+										<></>
+									)}
 								</div>
 							</div>
 						</div>

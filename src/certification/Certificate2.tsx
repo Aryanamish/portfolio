@@ -34,12 +34,9 @@ function Certificate2() {
 	};
 
 	return (
-		<Box
-			sx={{maxWidth: 500, flexGrow: 1}}
-			className="mb-8 shadow-lg m-2 mt-0 bg-skin-fill-highlight">
+		<Box sx={{maxWidth: 500, flexGrow: 1}} className="mb-8 shadow-lg m-2 mt-0 ">
 			<Paper
 				elevation={0}
-				className="bg-skin-fill-highlight"
 				sx={{
 					display: 'flex',
 					alignItems: 'center',
@@ -50,10 +47,13 @@ function Certificate2() {
 				<div className="flex flex-col w-full justify-center items-center ">
 					<Typography
 						className="text-center p-2 pt-4"
-						sx={{fontSize: '1.5rem', fontFamily: 'Unbounded, cursive'}}>
+						sx={{
+							fontSize: '1.5rem',
+							fontFamily: 'Unbounded, cursive',
+						}}>
 						{images[activeStep].label}
 					</Typography>
-					<p className="font-thin text-2xl">
+					<p className="font-thin text-2xl flex justify-center items-center text-center">
 						{images[activeStep].provider}
 					</p>
 				</div>

@@ -3,11 +3,11 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
 :root{
-    --base-bg-color: 254, 89, 68;
+    --base-bg-color: 48, 145, 139;
     --base-secondary-color: 255, 255, 255;
     --base-action-color: 255, 211, 64;
-    --base-bg-color-highlight: 240, 75, 56;
-    --base-bg-color-highlight-2: 241, 74, 55;
+    --base-bg-color-highlight: 39, 89, 88;
+    --base-bg-color-highlight-2: 255, 255, 255;
 
 }
 /* width */
@@ -27,7 +27,7 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: rgb(39, 89, 88); 
 }
 
 body{

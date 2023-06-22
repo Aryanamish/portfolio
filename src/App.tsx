@@ -5,8 +5,10 @@ import Hero from './hero/Hero';
 import NavBar from './navbar/NavBar';
 import Skills from './skills/Skills';
 import Socials from './socials/Socials';
+import React from 'react';
 
 function App() {
+	const [projectZoomed, setProjectZoomed] = React.useState(false);
 	return (
 		<>
 			<div className="flex justify-center items-center w-full h-full bg-skin-fill">
@@ -22,10 +24,11 @@ function App() {
 						</div>
 						<div id="project">
 							<ScrollAnimate
-								className="transition-all animation-duration-300"
+								disabled={projectZoomed}
+								className={'transition-all animation-duration-300'}
 								toggleClass="opacity-0"
 								animateClass="animate__fadeInRight">
-								<Projects />
+								<Projects setZoomed={setProjectZoomed} />
 							</ScrollAnimate>
 						</div>
 						<div id="cert">

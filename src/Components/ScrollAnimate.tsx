@@ -1,55 +1,50 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
-function makeid(length: number) {
-	let result = '';
-	const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-	const charactersLength = characters.length;
-	let counter = 0;
-	while (counter < length) {
-		result += characters.charAt(Math.floor(Math.random() * charactersLength));
-		counter += 1;
-	}
-	return result;
-}
-
-// toggleClass which will be toggled alternative to the animation class
 function ScrollAnimate(props: {
 	className?: string;
 	children: any;
 	animateClass: string;
 	toggleClass?: string;
+	disabled?: boolean;
 }) {
-	const scroll_class = makeid(7);
+	const scrollElement = useRef<HTMLDivElement>(null);
+	const [isInView, setIsInView] = useState(false);
+
 	useEffect(() => {
-		window.addEventListener('scroll', () => {
-			let reveals = document.querySelectorAll('.' + scroll_class);
-			for (let i = 0; i < reveals.length; i++) {
-				let windowHeight = window.innerHeight;
-				let elementTop = reveals[i].getBoundingClientRect().top;
-				let elementVisible = 150;
-				if (elementTop < windowHeight - elementVisible) {
-					reveals[i].classList.add(props.animateClass);
-					if (props.toggleClass)
-						reveals[i].classList.remove(props.toggleClass);
-				} else if (elementTop - 150 > windowHeight - elementVisible) {
-					reveals[i].classList.remove(props.animateClass);
-					if (props.toggleClass)
-						reveals[i].classList.add(props.toggleClass);
-				}
+		const handleScroll = () => {
+			if (!scrollElement.current || props.disabled) return;
+
+			const top = scrollElement.current.getBoundingClientRect().top;
+			const windowHeight =
+				window.innerHeight || document.documentElement.clientHeight;
+
+			// Check if the element is in the viewport
+			if (top <= windowHeight) {
+				setIsInView(true);
+			} else {
+				setIsInView(false);
 			}
-			// window.dispatchEvent(new Event('scroll'));
-		});
-	});
+		};
+
+		// Attach scroll event listener
+		window.addEventListener('scroll', handleScroll);
+
+		// Cleanup the event listener on unmount
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, [props.disabled]);
+
+	const elementClassName = props.className || '';
+	const animateClassName = props.animateClass || '';
+	const toggleClassName = props.toggleClass || '';
+
+	const finalClassName = `${elementClassName} ${
+		isInView ? animateClassName : toggleClassName
+	}`;
+
 	return (
-		<div
-			className={
-				'animate__animated ' +
-				scroll_class +
-				' ' +
-				props.className +
-				' ' +
-				props.toggleClass
-			}>
+		<div ref={scrollElement} className={finalClassName}>
 			{props.children}
 		</div>
 	);

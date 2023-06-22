@@ -10,6 +10,8 @@ function Card(props: {
 	onClick?: Function;
 	github?: string;
 	website?: string;
+	cardZoomed: Function;
+	state: boolean;
 }) {
 	const [showIcon, setShowIcon] = React.useState(false);
 	const descRef = React.useRef<HTMLDivElement>(null);
@@ -30,7 +32,7 @@ function Card(props: {
 		<div
 			onMouseEnter={() => setMouseOver(true)}
 			onMouseLeave={() => setMouseOver(false)}
-			className="flex md:w-64 bg-skin-fill-highlight-2 rounded-lg  transition-all backdrop-filter backdrop-blur-md">
+			className="flex md:w-64 bg-skin-fill-highlight rounded-lg  transition-all backdrop-filter backdrop-blur-md">
 			<div className="flex flex-col gap-3">
 				<div className="p-4 pb-0">
 					<div className="flex flex-col">
@@ -60,7 +62,7 @@ function Card(props: {
 					</div>
 				</div>
 				<div className="relative h-32 transition-all">
-					<div className=" bg-fill-highlight p-4 pt-0 rounded-md">
+					<div className=" bg-skin-fill-highlight p-4 pt-0 rounded-md">
 						<div className="flex flex-col ">
 							<div
 								ref={descRef}

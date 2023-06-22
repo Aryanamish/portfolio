@@ -1,14 +1,16 @@
 import React from 'react';
-import Card from './Card';
+import Cards2 from './Cards2';
 import Data from '../Data';
 
-function Projects() {
+function Projects(props: {setZoomed: Function}) {
 	return (
 		<div>
 			<div className="flex gap-x-4 gap-y-10 flex-wrap justify-center">
+				{/* <Cards2 /> */}
 				{Data.projects.map((e, idx) => {
 					return (
-						<Card
+						<Cards2
+							cardZoomed={props.setZoomed}
 							key={e.title + String(idx)}
 							number={String(idx + 1)}
 							domain={e.domain}
@@ -17,6 +19,7 @@ function Projects() {
 							desc={e.desc}
 							github={e.github}
 							website={e.website}
+							state={false}
 						/>
 					);
 				})}

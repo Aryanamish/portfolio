@@ -52,7 +52,7 @@ function Hero() {
 					<IMG
 						src={heros}
 						alt="Logo"
-						className="lg:w-[577px] lg:h-[600px] h-96 w-96"
+						className="lg:w-[577px] lg:h-[600px] h-96 w-96 lg-flex"
 						loading_text="logo.png..."
 					/>
 					{/* <img src={heros} alt="Logo" /> */}

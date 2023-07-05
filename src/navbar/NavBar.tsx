@@ -28,7 +28,7 @@ const NavBar = () => {
 
 	return (
 		<>
-			<div className="flex justify-center h-16 bg-skin-fill-highlight fixed w-full z-50">
+			<div className="flex justify-center h-16 bg-skin-fill-highlight backdrop-filter backdrop-blur-md fixed w-full z-50">
 				<div className="md:container w-full relative">
 					<nav className="w-full absolute bg-skin-fill-highlight">
 						<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

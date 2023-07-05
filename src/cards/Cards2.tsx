@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {motion} from 'framer-motion';
+import IMG from '../Components/IMG';
 import ZoomCenterOnClick from '../Components/ZoomCenterOnClick';
 
 export default function MediaCard(props: {
@@ -39,10 +40,10 @@ export default function MediaCard(props: {
 				initialState={false}>
 				<Card sx={{maxWidth: 345}} className="">
 					<motion.div className="m-2 bg-skin-highlight p-2 rounded-md">
-						<CardMedia
-							sx={{height: 140}}
-							image={props.image}
-							title={props.title}
+						<IMG
+							src={props.image}
+							className="h-[140px]"
+							alt={props.title}
 						/>
 					</motion.div>
 					<CardContent>
@@ -62,7 +63,6 @@ export default function MediaCard(props: {
 						</Typography>
 					</CardContent>
 					<CardActions>
-						<Button size="small">Share</Button>
 						<Button size="small" onClick={toggleCard}>
 							{isOpen ? 'Close' : 'Learn More'}
 						</Button>

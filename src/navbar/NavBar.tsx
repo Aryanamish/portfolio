@@ -44,7 +44,7 @@ const NavBar = () => {
 											return (
 												<a
 													href={link.link}
-													className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+													className="text-gray-300 hover:bg-skin-fill hover:text-white px-3 py-2 rounded-md text-sm text-lg">
 													{link.text}
 												</a>
 											);

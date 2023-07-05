@@ -25,14 +25,14 @@ const Slider = (props: {
 		setCurrentState(new_num);
 	};
 
-	React.useEffect(() => {
-		const timer = setInterval(() => {
-			donext();
-		}, 4000);
-		return () => {
-			clearInterval(timer);
-		};
-	});
+	// React.useEffect(() => {
+	// 	const timer = setInterval(() => {
+	// 		donext();
+	// 	}, 4000);
+	// 	return () => {
+	// 		clearInterval(timer);
+	// 	};
+	// });
 
 	return (
 		<div className="w-[400px] sm:w-[500px] flex flex-col bg-white gap-4">
@@ -53,7 +53,7 @@ const Slider = (props: {
 							key={index}
 							src={item.imagePath}
 							alt={item.label}
-							className="w-full"
+							className="w-full h-full"
 						/>
 					))}
 				</div>

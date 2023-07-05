@@ -11,16 +11,12 @@ function App() {
 	const [projectZoomed, setProjectZoomed] = React.useState(false);
 	return (
 		<>
-			<div className="flex justify-center items-center w-full h-full bg-skin-fill">
+			<NavBar />
+			<div className="flex justify-center items-center w-full h-full bg-skin-fill pt-32">
 				<div className="bg-skin-fill container">
 					<div className="scroll-snap-container px-2 flex gap-28 flex-col overflow-y-auto relative">
 						<div className="flex flex-col gap-20 lg:gap-5">
-							<div>
-								<NavBar />
-							</div>
-							<div>
-								<Hero></Hero>
-							</div>
+							<Hero></Hero>
 						</div>
 						<div id="project">
 							<ScrollAnimate
@@ -39,6 +35,7 @@ function App() {
 								<Certificate />
 							</ScrollAnimate>
 						</div>
+						{/* TODO skills is overflow on iphone (small screens) */}
 						<div id="skill">
 							<ScrollAnimate
 								className="transition-all animation-duration-300"

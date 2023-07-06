@@ -75,10 +75,10 @@ const Data = {
 		},
 	],
 	socials: [
-		// {
-		// 	icon: 'bi:linkedin',
-		// 	links: 'https://www.linkedin.com/in/aryan-amish/',
-		// },
+		{
+		 	icon: 'bi:linkedin',
+		 	links: 'https://www.linkedin.com/in/aryan-amish/',
+		 },
 		{
 			icon: 'academicons:stackoverflow-square',
 			links: 'https://stackoverflow.com/users/9817070/wetler',

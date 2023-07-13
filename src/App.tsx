@@ -29,7 +29,6 @@ function App() {
 								<SectionTitle>Projects</SectionTitle>
 								<Projects setZoomed={setProjectZoomed} />
 							</ScrollAnimate>
-							h
 						</div>
 						<div id="cert" className="pt-10">
 							<ScrollAnimate

@@ -1,5 +1,5 @@
 import {Icon} from '@iconify/react';
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 
 const Slider = (props: {
 	data: {
@@ -12,7 +12,6 @@ const Slider = (props: {
 }) => {
 	const data = props.data;
 	const [currentState, setCurrentState] = useState<number>(0);
-
 	const donext = () => {
 		setCurrentState((currentState + 1) % data.length);
 	};
@@ -68,11 +67,13 @@ const Slider = (props: {
 					{data.map((d, index) => {
 						if (index === currentState) {
 							return (
-								<div className="rounded-full w-2 h-2 bg-blue-800"></div>
+								<div className="rounded-full w-2 h-2 bg-blue-800 cursor-pointer"></div>
 							);
 						} else {
 							return (
-								<div className="rounded-full w-2 h-2 bg-slate-400"></div>
+								<div
+									className="rounded-full w-2 h-2 bg-slate-400 cursor-pointer"
+									onClick={() => setCurrentState(index)}></div>
 							);
 						}
 					})}

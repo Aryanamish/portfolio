@@ -1,5 +1,5 @@
 import {Icon} from '@iconify/react';
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 
 const Slider = (props: {
 	data: {

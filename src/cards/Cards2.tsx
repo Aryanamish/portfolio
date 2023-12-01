@@ -70,6 +70,8 @@ export default function MediaCard(props: {
 							{props.github && (
 								<a
 									href={props.github}
+									target="_blank"
+									rel="noopener noreferrer"
 									className="hover:scale-105 transition-all">
 									<Icon
 										icon="mdi:github"
@@ -80,6 +82,8 @@ export default function MediaCard(props: {
 							{props.website && (
 								<a
 									href={props.website}
+									target="_blank"
+									rel="noopener noreferrer"
 									className="hover:scale-105 transition-all">
 									<Icon
 										icon="fluent-mdl2:website"

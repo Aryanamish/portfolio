@@ -195,19 +195,21 @@ const Data = {
 		{
 			label: 'Dev Wiz Hackathon',
 			desc: 'Won second price in Dev Wiz Hackathon, which was conducted by Sathyabama Institute of Science and Technology.',
+			link: 'https://certificate.givemycertificate.com/c/001a1d08-e863-4de6-9f41-b9e5774a532e',
 			imagePath: dev_wiz,
 			provider: 'Sathyabama Institute of science and Technology',
 		},
 		{
 			label: 'Codingo',
 			desc: 'Coding Contest Held in Sathyabama Institute of Technology, the contest was based on DSA questions.',
+			link: 'https://drive.google.com/file/d/12z7n6cZeMlPuK6ueGW5fyKEDhEgBqLBp/view?usp=sharing',
 			imagePath: codingo,
 			provider: 'Sathyabama Institute of science and Technology',
 		},
 		{
 			label: 'NPTEL - Datastructure and Algorithm',
 			desc: 'This course covered essential topics such as algorithms, data structures, and programming concepts, and provided a solid foundation in developing efficient and optimized solutions.',
-			link: 'https://link',
+			link: 'https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL22CS70S2307126109013421',
 			imagePath: nptel,
 			provider: 'NPTEL',
 		},

@@ -35,9 +35,6 @@ body{
     overflow-x: hidden;
 }
 
-.scroll-snap-container{
-    /* scroll-snap-type: y proximity; */
-}
 
 .scroll-snap-child{
     scroll-snap-align: center;

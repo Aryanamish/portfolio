@@ -3,6 +3,7 @@ import foob_blog from './assets/projects/food_blog.png';
 import steganography from './assets/projects/steganography.png';
 import vorkinsta from './assets/projects/vorkinsta_chat.png';
 import work_hour_tracker from './assets/projects/attendance_tracking_system.png';
+import events_sathyabama from './assets/projects/event-sathyabama.webp';
 
 import codingo from './assets/certificates/codingo.png';
 import digital_leader from './assets/certificates/cloud_digital_leader_nov_2025.png';
@@ -76,9 +77,9 @@ const Data = {
 	],
 	socials: [
 		{
-		 	icon: 'bi:linkedin',
-		 	links: 'https://www.linkedin.com/in/aryan-amish/',
-		 },
+			icon: 'bi:linkedin',
+			links: 'https://www.linkedin.com/in/aryan-amish/',
+		},
 		{
 			icon: 'academicons:stackoverflow-square',
 			links: 'https://stackoverflow.com/users/9817070/wetler',
@@ -101,6 +102,25 @@ const Data = {
 		},
 	],
 	projects: [
+		{
+			domain: 'Web Development',
+			image: events_sathyabama,
+			title: 'Event@Sathyabama',
+			github: 'https://github.com/Events-Sathyabama/Events-Sathyabama',
+			desc: (
+				<>
+					Developed a streamlined event management system for a college
+					environment using <b>Next.js</b> for SEO and load time
+					optimization. Backend powered by Django and Django Rest
+					Framework, featuring secure <b>JWT-based login</b>.
+					Revolutionized approval processes,
+					<b> cutting approval times by 50%</b>. Implemented email
+					notifications for effective communication and a one-click event
+					application, resulting in a{' '}
+					<b>40% increase in application volume</b>.
+				</>
+			),
+		},
 		{
 			domain: 'Web Development',
 			image: foob_blog,
@@ -167,21 +187,19 @@ const Data = {
 		{
 			label: 'Google Cloud Computing',
 			desc: 'The Google Cloud Digital Leader Certificate is a professional certification program designed to demonstrate proficiency in Google Cloud technologies and solutions. It covers a range of topics including Google Cloud architecture, data and storage, security, application development and deployment, and machine learning.',
-			link: 'https://link',
+			link: 'https://www.credential.net/56ec8bbe-a535-4aae-b6fc-603fac685ab6',
 			imagePath: digital_leader,
 			provider: 'Google Cloud',
 		},
 		{
 			label: 'Dev Wiz Hackathon',
 			desc: 'Won second price in Dev Wiz Hackathon, which was conducted by Sathyabama Institute of Science and Technology.',
-			link: 'https://link',
 			imagePath: dev_wiz,
 			provider: 'Sathyabama Institute of science and Technology',
 		},
 		{
 			label: 'Codingo',
 			desc: 'Coding Contest Held in Sathyabama Institute of Technology, the contest was based on DSA questions.',
-			link: '',
 			imagePath: codingo,
 			provider: 'Sathyabama Institute of science and Technology',
 		},

@@ -43,6 +43,7 @@ const NavBar = () => {
 										{links.map((link) => {
 											return (
 												<a
+													key={link.text + link.link}
 													href={link.link}
 													className="text-gray-300 hover:bg-skin-fill hover:text-white px-3 py-2 rounded-md text-sm text-lg">
 													{link.text}
@@ -101,6 +102,7 @@ const NavBar = () => {
 								{links.map((link) => {
 									return (
 										<a
+											key={link.text + link.link}
 											onClick={() =>
 												setIsMobileMenuOpen(false)
 											}

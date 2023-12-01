@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import {motion} from 'framer-motion';
 import IMG from '../Components/IMG';
 import ZoomCenterOnClick from '../Components/ZoomCenterOnClick';
+import {Icon} from '@iconify/react';
 
 export default function MediaCard(props: {
 	number: String;
@@ -49,7 +50,10 @@ export default function MediaCard(props: {
 						<Typography gutterBottom variant="h5" component="div">
 							{props.title}
 						</Typography>
-						<Typography variant="body2" color="text.secondary">
+						<Typography
+							variant="body2"
+							color="text.secondary"
+							component="div">
 							<div
 								className={
 									(isOpen
@@ -61,7 +65,29 @@ export default function MediaCard(props: {
 							</div>
 						</Typography>
 					</CardContent>
-					<CardActions>
+					<CardActions className="flex justify-between">
+						<div className="w-auto h-9 cursor-pointer flex flex-row gap-4">
+							{props.github && (
+								<a
+									href={props.github}
+									className="hover:scale-105 transition-all">
+									<Icon
+										icon="mdi:github"
+										className="w-full h-full"
+									/>
+								</a>
+							)}
+							{props.website && (
+								<a
+									href={props.website}
+									className="hover:scale-105 transition-all">
+									<Icon
+										icon="fluent-mdl2:website"
+										className="w-full h-full"
+									/>
+								</a>
+							)}
+						</div>
 						<Button size="small" onClick={toggleCard}>
 							{isOpen ? 'Close' : 'Learn More'}
 						</Button>

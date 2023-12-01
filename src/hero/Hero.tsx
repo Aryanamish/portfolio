@@ -2,8 +2,7 @@ import React, {useEffect} from 'react';
 //@ts-expect-error
 import Typewriter from 'typewriter-effect/dist/core';
 import Button from '../Components/Button';
-import heros from '../assets/heros.png';
-import IMG from '../Components/IMG';
+import HeroImage from './HeroImage';
 
 function Hero() {
 	useEffect(() => {
@@ -49,12 +48,7 @@ function Hero() {
 					</div>
 				</div>
 				<div className="justify-center items-center  hidden lg:flex pr-10">
-					<IMG
-						src={heros}
-						alt="Logo"
-						className="lg:w-[577px] lg:h-[600px] h-96 w-96 lg-flex"
-						loading_text="logo.png..."
-					/>
+					<HeroImage />
 					{/* <img src={heros} alt="Logo" /> */}
 				</div>
 			</div>

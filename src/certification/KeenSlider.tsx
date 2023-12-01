@@ -31,7 +31,7 @@ const KeenSlider = (props: {
 		return () => {
 			clearInterval(timer);
 		};
-	}, [currentState]);
+	}, [currentState, data.length, instanceRef]);
 	const doprevious = (e: React.MouseEvent<HTMLDivElement>) => {
 		e.stopPropagation();
 		instanceRef.current?.prev();
@@ -66,7 +66,7 @@ const KeenSlider = (props: {
 										href={item.link}
 										target="_blank"
 										rel="noopener noreferrer">
-										<img
+										<IMG
 											key={index}
 											src={item.imagePath}
 											alt={item.label}
@@ -74,7 +74,7 @@ const KeenSlider = (props: {
 										/>
 									</a>
 								) : (
-									<img
+									<IMG
 										key={index}
 										src={item.imagePath}
 										alt={item.label}

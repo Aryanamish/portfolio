@@ -106,6 +106,7 @@ const Data = {
 			domain: 'Web Development',
 			image: events_sathyabama,
 			title: 'Event@Sathyabama',
+			website: 'https://events.aryanamish.in',
 			github: 'https://github.com/Events-Sathyabama/Events-Sathyabama',
 			desc: (
 				<>

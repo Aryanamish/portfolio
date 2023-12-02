@@ -19,9 +19,7 @@ const Form = (props: {className: string}) => {
 	const [success, setSuccess] = React.useState(false);
 	const validationSchema = Yup.object().shape({
 		name: Yup.string().required('Name is required'),
-		email: Yup.string()
-			.required('Email is required')
-			.email('Invalid email format'),
+		email: Yup.string().required('Email is required').email('Invalid email format'),
 		subject: Yup.string().required('Subject is required'),
 		message: Yup.string().required('Message is required'),
 	});
@@ -34,7 +32,7 @@ const Form = (props: {className: string}) => {
 			message: '',
 		},
 		validationSchema,
-		onSubmit: (values) => {
+		onSubmit: () => {
 			if (!contactForm.current) return;
 			setSendingMail(true);
 			setEmailError(false);
@@ -63,7 +61,7 @@ const Form = (props: {className: string}) => {
 		},
 	});
 
-	const [sendingMail, setSendingMail] = React.useState<Boolean>(false);
+	const [sendingMail, setSendingMail] = React.useState<boolean>(false);
 	const {values, touched, errors, handleChange, handleSubmit} = formik;
 
 	return (
@@ -92,8 +90,8 @@ const Form = (props: {className: string}) => {
 						'text-highlight text-lg w-full ' +
 						(emailError ? 'opacity-100' : 'opacity-0')
 					}>
-					"The message could not be sent successfully. Please reach out to
-					me at 'aryanamish385@gmail.com'"
+					"The message could not be sent successfully. Please reach out to me at
+					'aryanamish385@gmail.com'"
 				</div>
 				<form
 					onSubmit={handleSubmit}
@@ -110,9 +108,7 @@ const Form = (props: {className: string}) => {
 								placeholder="Full Name"
 								className={
 									'focus:outline-highlight w-full text-2xl bg-gray-200 rounded-md placeholder:text-2xl p-3 shadow-sm ' +
-									(touched.name && errors.name
-										? 'border-red-700 border-2'
-										: '')
+									(touched.name && errors.name ? 'border-red-700 border-2' : '')
 								}
 							/>
 							{touched.name && errors.name && (
@@ -131,9 +127,7 @@ const Form = (props: {className: string}) => {
 								onChange={handleChange}
 								className={
 									'focus:outline-highlight w-full text-2xl bg-gray-200 rounded-md placeholder:text-2xl p-3 shadow-sm ' +
-									(touched.email && errors.email
-										? 'border-red-700 border-2'
-										: '')
+									(touched.email && errors.email ? 'border-red-700 border-2' : '')
 								}
 							/>
 							{touched.email && errors.email && (
@@ -154,9 +148,7 @@ const Form = (props: {className: string}) => {
 							onChange={handleChange}
 							className={
 								'focus:outline-highlight w-full text-2xl bg-gray-200 rounded-md placeholder:text-2xl p-3 shadow-sm ' +
-								(touched.subject && errors.subject
-									? 'border-red-700 border-2'
-									: '')
+								(touched.subject && errors.subject ? 'border-red-700 border-2' : '')
 							}
 						/>
 						{touched.subject && errors.subject && (
@@ -174,9 +166,7 @@ const Form = (props: {className: string}) => {
 							onChange={handleChange}
 							className={
 								'focus:outline-highlight w-full h-56 text-2xl bg-gray-200 rounded-md placeholder:text-2xl p-5 shadow-sm resize-none scrollBarStyle-TextArea ' +
-								(touched.message && errors.message
-									? 'border-red-700 border-2'
-									: '')
+								(touched.message && errors.message ? 'border-red-700 border-2' : '')
 							}></textarea>
 						{touched.message && errors.message && (
 							<span className="error-message text-skin-highlight">
@@ -185,10 +175,7 @@ const Form = (props: {className: string}) => {
 						)}
 					</div>
 					<div className="flex justify-center items-center">
-						<button
-							type="submit"
-							className="hidden"
-							id="send_email"></button>
+						<button type="submit" className="hidden" id="send_email"></button>
 						<Button.Pill
 							onClick={() => {
 								document.getElementById('send_email')?.click();
@@ -196,9 +183,7 @@ const Form = (props: {className: string}) => {
 							text={
 								<>
 									Contact Me
-									<span className="pl-2 text-xs text-black/80">
-										~ it's free
-									</span>
+									<span className="pl-2 text-xs text-black/80">~ it's free</span>
 								</>
 							}
 						/>

@@ -5,24 +5,25 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {motion} from 'framer-motion';
-import IMG from '../Components/IMG';
+import Img from '../Components/IMG';
 import ZoomCenterOnClick from '../Components/ZoomCenterOnClick';
 import {Icon} from '@iconify/react';
 
 export default function MediaCard(props: {
-	number: String;
+	number: string;
 	domain: string;
 	image: string;
 	title: string;
 	desc: string | React.ReactNode;
-	onClick?: Function;
 	github?: string;
 	website?: string;
 	state: boolean;
-	cardZoomed: Function;
+	cardZoomed: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
 	const [isOpen, __setIsOpen] = React.useState(props.state);
-	const setIsOpen = (state: boolean) => {
+	const setIsOpen = (
+		state: boolean
+	) => {
 		props.cardZoomed(state);
 		__setIsOpen(state);
 	};
@@ -40,20 +41,13 @@ export default function MediaCard(props: {
 				initialState={false}>
 				<Card sx={{maxWidth: 345}} className="">
 					<motion.div className="m-2 bg-skin-highlight p-2 rounded-md">
-						<IMG
-							src={props.image}
-							className="h-[140px]"
-							alt={props.title}
-						/>
+						<Img src={props.image} className="h-[140px]" alt={props.title} />
 					</motion.div>
 					<CardContent>
 						<Typography gutterBottom variant="h5" component="div">
 							{props.title}
 						</Typography>
-						<Typography
-							variant="body2"
-							color="text.secondary"
-							component="div">
+						<Typography variant="body2" color="text.secondary" component="div">
 							<div
 								className={
 									(isOpen
@@ -73,10 +67,7 @@ export default function MediaCard(props: {
 									target="_blank"
 									rel="noopener noreferrer"
 									className="hover:scale-105 transition-all">
-									<Icon
-										icon="mdi:github"
-										className="w-full h-full"
-									/>
+									<Icon icon="mdi:github" className="w-full h-full" />
 								</a>
 							)}
 							{props.website && (
@@ -85,10 +76,7 @@ export default function MediaCard(props: {
 									target="_blank"
 									rel="noopener noreferrer"
 									className="hover:scale-105 transition-all">
-									<Icon
-										icon="fluent-mdl2:website"
-										className="w-full h-full"
-									/>
+									<Icon icon="fluent-mdl2:website" className="w-full h-full" />
 								</a>
 							)}
 						</div>

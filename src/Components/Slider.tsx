@@ -1,15 +1,15 @@
 import {Icon} from '@iconify/react';
 import React, {useState} from 'react';
 
-const Slider = (props: {
-	data: {
-		label: string;
-		desc: string;
-		link: string;
-		imagePath: string;
-		provider: string;
-	}[];
-}) => {
+interface SliderInterface {
+	label: string;
+	desc: string;
+	link: string;
+	imagePath: string;
+	provider: string;
+}
+
+const Slider = (props: {data: SliderInterface[]}) => {
 	const data = props.data;
 	const [currentState, setCurrentState] = useState<number>(0);
 	const donext = () => {
@@ -41,12 +41,10 @@ const Slider = (props: {
 					style={{
 						transform: `translateX(-${currentState * 100}%)`,
 					}}>
-					{data.map((item: any, index: number) => (
+					{data.map((item: SliderInterface) => (
 						<>
 							<span className="font-bold text-xl">{item.label}</span>
-							<span className="text-lg text-slate-600">
-								{item.provider}
-							</span>
+							<span className="text-lg text-slate-600">{item.provider}</span>
 						</>
 					))}
 				</div>
@@ -57,7 +55,7 @@ const Slider = (props: {
 					style={{
 						transform: `translateX(-${currentState * 100}%)`,
 					}}>
-					{data.map((item: any, index: number) => (
+					{data.map((item: SliderInterface, index: number) => (
 						<img
 							key={index}
 							src={item.imagePath}
@@ -74,7 +72,7 @@ const Slider = (props: {
 					<Icon icon="maki:arrow" hFlip={true} />
 				</div>
 				<div className="flex flex-row gap-1 mt-3">
-					{data.map((d, index) => {
+					{data.map((_, index) => {
 						if (index === currentState) {
 							return (
 								<div

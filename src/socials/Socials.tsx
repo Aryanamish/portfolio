@@ -1,10 +1,10 @@
 import {Icon} from '@iconify/react';
-import React, {useState} from 'react';
+import {useState} from 'react';
 import Layout from './Layout';
 import Data from '../Data';
 
 function Socials() {
-	let mouse_over = [];
+	const mouse_over = [];
 	for (let i = 0; i < Data.socials.length; i++) {
 		mouse_over.push(false);
 	}
@@ -24,16 +24,16 @@ function Socials() {
 						return (
 							<a
 								key={e.links + String(idx)}
-								onMouseEnter={(e) => {
-									let mouse_over = [];
+								onMouseEnter={() => {
+									const mouse_over = [];
 									for (let i = 0; i < Data.socials.length; i++) {
 										mouse_over.push(false);
 									}
 									mouse_over[idx] = true;
 									setIsMouseOver(mouse_over);
 								}}
-								onMouseLeave={(e) => {
-									let mouse_over = [];
+								onMouseLeave={() => {
+									const mouse_over = [];
 									for (let i = 0; i < Data.socials.length; i++) {
 										mouse_over.push(false);
 									}
@@ -50,9 +50,7 @@ function Socials() {
 											'transition-all w-full h-full' +
 											' ' +
 											(() => {
-												return isMouseOver[idx] === true
-													? 'animate-bounce'
-													: '';
+												return isMouseOver[idx] === true ? 'animate-bounce' : '';
 											})()
 										}
 									/>

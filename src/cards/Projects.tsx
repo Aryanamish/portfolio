@@ -2,7 +2,9 @@ import React from 'react';
 import Cards2 from './Cards2';
 import Data from '../Data';
 
-function Projects(props: {setZoomed: Function}) {
+function Projects(props: {
+	setZoomed: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
 	return (
 		<div>
 			<div className="flex gap-x-4 gap-y-10 flex-wrap justify-center">

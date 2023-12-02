@@ -1,24 +1,23 @@
 import React, {useState} from 'react';
 import {Icon} from '@iconify/react';
-import IMG from '../Components/IMG';
+import Img from '../Components/IMG';
 function Card(props: {
-	number: String;
+	number: string;
 	domain: string;
 	image: string;
 	title: string;
-	desc: any;
-	onClick?: Function;
+	desc: React.ReactNode | string;
 	github?: string;
 	website?: string;
-	cardZoomed: Function;
+	cardZoomed: React.Dispatch<React.SetStateAction<boolean>>;
 	state: boolean;
 }) {
 	const [showIcon, setShowIcon] = React.useState(false);
 	const descRef = React.useRef<HTMLDivElement>(null);
 	React.useEffect(() => {
 		const textElement = descRef.current;
-		function isEllipsisActive(e: any) {
-			var tolerance = 2; // In px. Depends on the font you are using
+		function isEllipsisActive(e: HTMLDivElement) {
+			const tolerance = 2; // In px. Depends on the font you are using
 			return e.offsetWidth + tolerance < e.scrollWidth;
 		}
 		if (textElement) {
@@ -37,9 +36,7 @@ function Card(props: {
 				<div className="p-4 pb-0">
 					<div className="flex flex-col">
 						<div>
-							<span className="text-skin-highlight">
-								{props.domain}
-							</span>
+							<span className="text-skin-highlight">{props.domain}</span>
 						</div>
 					</div>
 					<div
@@ -47,17 +44,15 @@ function Card(props: {
 							(mouseOver ? 'scale-105 duration-300  ' : ' ') +
 							'bg-white flex justify-center items-center p-2 rounded-md transition-all h-50 '
 						}>
-						<IMG src={props.image} alt="Logo" className="">
+						<Img src={props.image} alt="Logo" className="">
 							<div className="w-full h-full flex justify-center items-center flex-col gap-4">
 								<div className="animate-spin inline-block w-8 h-8 border-4 border-x-0 rounded-full border-fill"></div>
 							</div>
-						</IMG>
+						</Img>
 					</div>
 					<div className="flex flex-col gap-5">
 						<div>
-							<span className="text-2xl text-skin-secondary">
-								{props.title}
-							</span>
+							<span className="text-2xl text-skin-secondary">{props.title}</span>
 						</div>
 					</div>
 				</div>

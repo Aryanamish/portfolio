@@ -3,7 +3,7 @@ import React from 'react';
 
 const ZoomCenterOnClick = (props: {
 	children: JSX.Element;
-	zoomed: Function;
+	zoomed: (state:boolean)=>void;
 	initialState: boolean;
 	state: boolean;
 	backdrop: boolean;
@@ -21,8 +21,7 @@ const ZoomCenterOnClick = (props: {
 		<motion.div className="w-full h-full">
 			<motion.div
 				className={
-					(props.state ? 'fixed' : '') +
-					' top-0 left-0  w-full h-full z-20'
+					(props.state ? 'fixed' : '') + ' top-0 left-0  w-full h-full z-20'
 				}>
 				<motion.div
 					initial={{opacity: 0}}

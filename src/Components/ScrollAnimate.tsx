@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 
 function ScrollAnimate(props: {
 	className?: string;
-	children: any;
+	children: React.ReactNode;
 	animateClass: string;
 	toggleClass?: string;
 	disabled?: boolean;

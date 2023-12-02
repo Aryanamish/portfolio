@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-//@ts-expect-error
+import {useEffect} from 'react';
+//@ts-expect-error this library dosent have typescript
 import Typewriter from 'typewriter-effect/dist/core';
 import Button from '../Components/Button';
 import HeroImage from './HeroImage';
@@ -22,14 +22,10 @@ function Hero() {
 						<span className="text-skin-highlight text-xl">I'm ,</span>
 					</div>
 					<div>
-						<span className="text-6xl lg:text-9xl text-skin-secondary">
-							Aryan
-						</span>
+						<span className="text-6xl lg:text-9xl text-skin-secondary">Aryan</span>
 					</div>
 					<div>
-						<span className="text-6xl lg:text-9xl text-skin-secondary">
-							Amish
-						</span>
+						<span className="text-6xl lg:text-9xl text-skin-secondary">Amish</span>
 					</div>
 					<div>
 						<span className="text-skin-secondary" id="intro">
@@ -39,7 +35,7 @@ function Hero() {
 					<div className="mt-10">
 						<Button.Action
 							onClick={() => {
-								let a = document.querySelector('[href="#project"]');
+								const a = document.querySelector('[href="#project"]');
 								if (a instanceof HTMLElement) {
 									a.click();
 								}

@@ -110,14 +110,12 @@ const Data = {
 			github: 'https://github.com/Events-Sathyabama/Events-Sathyabama',
 			desc: (
 				<>
-					Developed a streamlined event management system for a college
-					environment using <b>Next.js</b> for SEO and load time
-					optimization. Backend powered by Django and Django Rest
-					Framework, featuring secure <b>JWT-based login</b>.
+					Developed a streamlined event management system for a college environment
+					using <b>Next.js</b> for SEO and load time optimization. Backend powered by
+					Django and Django Rest Framework, featuring secure <b>JWT-based login</b>.
 					Revolutionized approval processes,
-					<b> cutting approval times by 50%</b>. Implemented email
-					notifications for effective communication and a one-click event
-					application, resulting in a{' '}
+					<b> cutting approval times by 50%</b>. Implemented email notifications for
+					effective communication and a one-click event application, resulting in a{' '}
 					<b>40% increase in application volume</b>.
 				</>
 			),
@@ -145,9 +143,8 @@ const Data = {
 			title: 'Vorkinsta',
 			desc: (
 				<>
-					I was engaged as a Full-Stack Developer to enhance the user
-					experience of an Upwork-like website by adding a real-time chat
-					feature. I leveraged{' '}
+					I was engaged as a Full-Stack Developer to enhance the user experience of
+					an Upwork-like website by adding a real-time chat feature. I leveraged{' '}
 					<u>
 						<b>Django</b>
 					</u>{' '}
@@ -155,10 +152,9 @@ const Data = {
 					<u>
 						<b>WebSocket</b>
 					</u>{' '}
-					to build the chat feature, which allowed users to communicate
-					with each other in real-time. I was also responsible for
-					designing the database schema to store chat messages and other
-					related data.,
+					to build the chat feature, which allowed users to communicate with each
+					other in real-time. I was also responsible for designing the database
+					schema to store chat messages and other related data.,
 				</>
 			),
 		},
@@ -168,11 +164,11 @@ const Data = {
 			title: 'Work Hour Tracker',
 			desc: (
 				<>
-					It is a web-based platform designed to streamline the process of
-					recording, tracking, and approving employee working hours. The
-					main goal of this project is to create a simple and efficient
-					system that makes it easy for employees to log their hours worked
-					and for managers to approve or deny these hours.,
+					It is a web-based platform designed to streamline the process of recording,
+					tracking, and approving employee working hours. The main goal of this
+					project is to create a simple and efficient system that makes it easy for
+					employees to log their hours worked and for managers to approve or deny
+					these hours.,
 				</>
 			),
 		},

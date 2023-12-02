@@ -1,7 +1,10 @@
 import React from 'react';
 import Button from '../Components/Button';
 
-function LetsTalk(props: {onClick: Function; className?: string}) {
+function LetsTalk(props: {
+	onClick: (event: React.MouseEvent<HTMLDivElement>) => void;
+	className?: string;
+}) {
 	return (
 		<div
 			className={
@@ -14,9 +17,7 @@ function LetsTalk(props: {onClick: Function; className?: string}) {
 					</span>
 				</div>
 				<div>
-					<span className="font-bold text-6xl text-skin-secondary">
-						With Me?
-					</span>
+					<span className="font-bold text-6xl text-skin-secondary">With Me?</span>
 				</div>
 			</div>
 			<div className="flex justify-center items-center">

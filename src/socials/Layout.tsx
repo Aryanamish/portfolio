@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Layout(props: {children: String | JSX.Element | JSX.Element[]}) {
+function Layout(props: {children: string | JSX.Element | JSX.Element[]}) {
 	return (
 		<div>
 			<div className="flex w-full h-72">

@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 
-function IMG(props: {
+const Img = (props: {
 	src: string;
 	className?: string;
 	alt: string;
-	children?: any;
+	children?: React.ReactNode;
 	loading_text?: string;
-}) {
+}) =>{
 	const [imgStatus, setImgStatus] = useState(false);
 	return (
 		<div className={props.className}>
@@ -36,4 +36,4 @@ function IMG(props: {
 	);
 }
 
-export default IMG;
+export default Img;

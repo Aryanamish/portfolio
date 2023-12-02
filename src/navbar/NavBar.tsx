@@ -61,9 +61,7 @@ const NavBar = () => {
 										aria-expanded={isMobileMenuOpen}>
 										<span className="sr-only">Open Nav Bar</span>
 										<svg
-											className={`${
-												isMobileMenuOpen ? 'hidden' : 'block'
-											} h-6 w-6`}
+											className={`${isMobileMenuOpen ? 'hidden' : 'block'} h-6 w-6`}
 											xmlns="http://www.w3.org/2000/svg"
 											fill="none"
 											viewBox="0 0 24 24"
@@ -76,9 +74,7 @@ const NavBar = () => {
 											/>
 										</svg>
 										<svg
-											className={`${
-												isMobileMenuOpen ? 'block' : 'hidden'
-											} h-6 w-6`}
+											className={`${isMobileMenuOpen ? 'block' : 'hidden'} h-6 w-6`}
 											xmlns="http://www.w3.org/2000/svg"
 											fill="none"
 											viewBox="0 0 24 24"
@@ -103,9 +99,7 @@ const NavBar = () => {
 									return (
 										<a
 											key={link.text + link.link}
-											onClick={() =>
-												setIsMobileMenuOpen(false)
-											}
+											onClick={() => setIsMobileMenuOpen(false)}
 											href={link.link}
 											className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
 											{link.text}

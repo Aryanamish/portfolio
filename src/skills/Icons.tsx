@@ -22,9 +22,7 @@ const Icons = (props: {
 				// console.log('isMouseOver ' + isMouseOver);
 			}}
 			className={
-				(isMouseOver === true ? props.animate || '' : '') +
-				' ' +
-				props.className
+				(isMouseOver === true ? props.animate || '' : '') + ' ' + props.className
 			}>
 			<Icon
 				icon={props.icon}

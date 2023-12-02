@@ -1,4 +1,3 @@
-import React from 'react';
 import Sphere from './Sphere';
 import ExtraSkills from './ExtraSkills';
 import Data from '../Data';
@@ -10,7 +9,7 @@ function Skills() {
 				<Sphere />
 
 				{Data.extra_skills.map((e) => {
-					let d = [];
+					const d = [];
 					for (let i = 0; i < e.data.length; i++) {
 						d.push(e.data[i].icon);
 					}

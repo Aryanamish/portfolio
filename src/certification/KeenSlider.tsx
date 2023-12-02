@@ -2,17 +2,16 @@ import React, {useState} from 'react';
 import {useKeenSlider} from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import {Icon} from '@iconify/react';
-import IMG from '../Components/IMG';
+import Img from '../Components/IMG';
 
-const KeenSlider = (props: {
-	data: {
-		label: string;
-		desc: string;
-		link?: string;
-		imagePath: string;
-		provider?: string;
-	}[];
-}) => {
+interface CertData {
+	label: string;
+	desc: string;
+	link?: string;
+	imagePath: string;
+	provider?: string;
+}
+const KeenSlider = (props: {data: CertData[]}) => {
 	const data = props.data;
 	const [currentState, setCurrentState] = useState<number>(0);
 	const [sliderRef, instanceRef] = useKeenSlider(
@@ -47,26 +46,19 @@ const KeenSlider = (props: {
 	return (
 		<div className="w-[400px] sm:w-[500px] flex flex-col bg-white gap-4">
 			<div ref={sliderRef} className="bg-white keen-slider">
-				{data.map((item: any, index: number) => (
-					<div
-						className="keen-slider__slide w-full"
-						key={index + item.label}>
+				{data.map((item: CertData, index: number) => (
+					<div className="keen-slider__slide w-full" key={index + item.label}>
 						<div className="flex items-center justify-center w-full h-28 flex-col">
 							<span className="font-bold text-xl">{item.label}</span>
 							{item.provider && (
-								<span className="text-lg text-slate-600">
-									{item.provider}
-								</span>
+								<span className="text-lg text-slate-600">{item.provider}</span>
 							)}
 						</div>
 						<div className="max-h-96 overflow-hidden border border-1 border-slate-300">
 							<div className="flex transition-transform duration-500 ease-in-out">
 								{item.link ? (
-									<a
-										href={item.link}
-										target="_blank"
-										rel="noopener noreferrer">
-										<IMG
+									<a href={item.link} target="_blank" rel="noopener noreferrer">
+										<Img
 											key={index}
 											src={item.imagePath}
 											alt={item.label}
@@ -74,7 +66,7 @@ const KeenSlider = (props: {
 										/>
 									</a>
 								) : (
-									<IMG
+									<Img
 										key={index}
 										src={item.imagePath}
 										alt={item.label}
@@ -119,9 +111,7 @@ const KeenSlider = (props: {
 					onClick={donext}>
 					<Icon
 						icon="maki:arrow"
-						className={
-							currentState === data.length - 1 ? 'text-slate-400' : ''
-						}
+						className={currentState === data.length - 1 ? 'text-slate-400' : ''}
 					/>
 				</div>
 			</div>

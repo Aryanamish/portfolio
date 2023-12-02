@@ -1,7 +1,10 @@
 import {Icon} from '@iconify/react';
 import React, {ReactNode, useState} from 'react';
 
-function ButtonAction(props: any) {
+function ButtonAction(props: {
+	onClick: (event: React.MouseEvent<HTMLDivElement>) => void;
+	mouseOver?: boolean;
+}) {
 	const [isMouseover, setIsMouseOver] = useState(false);
 	return (
 		<div
@@ -19,8 +22,7 @@ function ButtonAction(props: any) {
 								? ' animate-bounce transition-all'
 								: '';
 						return (
-							'rounded-full w-4 h-4 bg-skin-fill absolute left-[-7px]' +
-							animate
+							'rounded-full w-4 h-4 bg-skin-fill absolute left-[-7px]' + animate
 						);
 					})()}>
 					<Icon
@@ -36,7 +38,10 @@ function ButtonAction(props: any) {
 	);
 }
 
-function PillCircle(props: {onClick?: Function; text: ReactNode | string}) {
+function PillCircle(props: {
+	onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
+	text: ReactNode | string;
+}) {
 	const [isMouseOver, setIsMouseOver] = useState(false);
 
 	return (
@@ -71,7 +76,10 @@ function PillCircle(props: {onClick?: Function; text: ReactNode | string}) {
 	);
 }
 
-function Pill(props: {text: string | ReactNode; onClick?: Function}) {
+function Pill(props: {
+	text: string | ReactNode;
+	onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
+}) {
 	return (
 		<div
 			onClick={(evt) => {

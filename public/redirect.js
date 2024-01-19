@@ -3,6 +3,10 @@
 		'/repo/events-sathyabama/':
 			'https://github.com/Events-Sathyabama/Events-Sathyabama/',
 		'/repo/songstreamhub/': 'https://github.com/Surya-Kumar-03/SongStreamHub',
+		'/repo/property-booking-system/':
+			'https://github.com/Surya-Kumar-03/Property-Booking-System',
+		'/repo/steganography/': 'https://github.com/Aryanamish/Steganography',
+		'/repo/dev_wiz_hackthon/': 'https://github.com/Aryanamish/dev_wiz_hackthon',
 	};
 	const VIDEO = {
 		'/video/events-sathyabama/':
@@ -13,6 +17,8 @@
 	const SITE = {
 		'/site/events-sathyabama/': 'https://events.aryanamish.in/',
 		'/site/vorkinsta/': 'https://www.vorkinsta.com/',
+		'/site/property-booking-system/': 'https://hotel-rental.onrender.com/login',
+		'/site/steganography/': 'https://aryanamish.github.io/Steganography/',
 	};
 
 	const CERT = {
@@ -27,11 +33,18 @@
 		'/cert/codingo/':
 			'https://drive.google.com/file/d/12z7n6cZeMlPuK6ueGW5fyKEDhEgBqLBp/view?usp=sharing',
 	};
+
+	const PROFILES = {
+		'/profile/codechef/': 'https://www.codechef.com/users/aryan_amish',
+		'/profile/leetcode/': 'https://leetcode.com/aryanamish/',
+		'/profile/GeeksForGeeks/': 'https://auth.geeksforgeeks.org/user/aryanamish/',
+	};
 	const REDIRECT_PATHS = {
 		video: VIDEO,
 		repo: REPO,
 		site: SITE,
 		cert: CERT,
+		profiles: PROFILES,
 	};
 
 	let path = window.location.pathname;

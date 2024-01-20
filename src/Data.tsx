@@ -30,6 +30,7 @@ const Data = {
 		'Cloud Computing',
 		'SolidJs',
 	],
+	type_writer: ['Full Stack Developer', 'Dev Ops', 'Data Structure'],
 	masks_svgs: [python, cpp, java, docker, cloud],
 	extra_skills: [
 		{

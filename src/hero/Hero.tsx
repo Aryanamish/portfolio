@@ -3,11 +3,12 @@ import {useEffect} from 'react';
 import Typewriter from 'typewriter-effect/dist/core';
 import Button from '../Components/Button';
 import HeroImage from './HeroImage';
+import Data from '../Data';
 
 function Hero() {
 	useEffect(() => {
 		new Typewriter('#intro', {
-			strings: ['Data Structure', 'Machine Learning', 'Web Development'],
+			strings: Data.type_writer,
 			autoStart: true,
 			delay: 50,
 			deleteSpeed: 50,

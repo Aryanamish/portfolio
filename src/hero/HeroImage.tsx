@@ -15,20 +15,24 @@ export default function HeroImage() {
 		return () => clearInterval(intervalId);
 	});
 
-	const imageStyle = {
-		backgroundBlendMode: 'multiply',
-		mask: `url(${svgs[svgIndex]}) center / cover`,
-	};
 	return (
 		<>
-			<div className={`flex   justify-center items-center`}>
-				<div>
-					<Img
-						src={heros}
-						alt="Hero Image"
-						className="rounded-lg bg-contain bg-no-repeat h-[500px] w-[500px] transition-all"
-						style={imageStyle}
-					/>
+			<div className={`flex relative w-full h-full  justify-center items-center `}>
+				<div className="">
+					{svgs.map((svg, idx) => {
+						return (
+							<Img
+								src={heros}
+								alt="Hero Image"
+								className="rounded-lg bg-contain bg-no-repeat h-[500px] w-[500px] transition-all duration-500 ease-in-out absolute top-0 left-0"
+								style={{
+									backgroundBlendMode: 'multiply',
+									mask: `url(${svg}) center / cover`,
+									opacity: idx == svgIndex ? 1 : 0,
+								}}
+							/>
+						);
+					})}
 				</div>
 			</div>
 		</>

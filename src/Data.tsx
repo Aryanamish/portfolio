@@ -10,6 +10,13 @@ import digital_leader from './assets/certificates/cloud_digital_leader_nov_2025.
 import dev_wiz from './assets/certificates/dev_wiz.webp';
 import nptel from './assets/certificates/programming_dsa_algo_nptel.webp';
 
+// Mask svgs
+import docker from './assets/mask_svg/docker-wordmark.svg';
+import cpp from './assets/mask_svg/file-type-cpp2.svg';
+import java from './assets/mask_svg/java.svg';
+import python from './assets/mask_svg/python.svg';
+import cloud from './assets/mask_svg/baseline-cloud.svg';
+
 const Data = {
 	skills: [
 		'HTML5',
@@ -23,6 +30,7 @@ const Data = {
 		'Cloud Computing',
 		'SolidJs',
 	],
+	masks_svgs: [python, cpp, java, docker, cloud],
 	extra_skills: [
 		{
 			text: 'I can code in',

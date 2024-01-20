@@ -43,9 +43,8 @@ function Hero() {
 						/>
 					</div>
 				</div>
-				<div className="justify-center items-center  hidden lg:flex pr-10">
+				<div className="justify-center flex-1 items-center  hidden lg:flex pr-10">
 					<HeroImage />
-					{/* <img src={heros} alt="Logo" /> */}
 				</div>
 			</div>
 		</div>

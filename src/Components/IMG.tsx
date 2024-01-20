@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
 
-const Img = (props: {
-	src: string;
-	className?: string;
-	alt: string;
-	children?: React.ReactNode;
-	loading_text?: string;
-}) =>{
+const Img = (
+	props: {
+		src: string;
+		className?: string;
+		alt: string;
+		children?: React.ReactNode;
+		loading_text?: string;
+	} & React.HTMLAttributes<HTMLImageElement>
+) => {
 	const [imgStatus, setImgStatus] = useState(false);
 	return (
 		<div className={props.className}>
@@ -27,13 +29,12 @@ const Img = (props: {
 				</div>
 			)}
 			<img
-				src={props.src}
 				className={'w-full h-full ' + (imgStatus ? '' : 'hidden')}
-				alt={props.alt}
 				onLoad={() => setImgStatus(true)}
+				{...props}
 			/>
 		</div>
 	);
-}
+};
 
 export default Img;

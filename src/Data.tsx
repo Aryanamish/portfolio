@@ -1,14 +1,14 @@
-import portfolio from './assets/projects/portfolio.png';
-import foob_blog from './assets/projects/food_blog.png';
-import steganography from './assets/projects/steganography.png';
-import vorkinsta from './assets/projects/vorkinsta_chat.png';
-import work_hour_tracker from './assets/projects/attendance_tracking_system.png';
+import portfolio from './assets/projects/portfolio.webp';
+import foob_blog from './assets/projects/food_blog.webp';
+import steganography from './assets/projects/steganography.webp';
+import vorkinsta from './assets/projects/vorkinsta_chat.webp';
+import work_hour_tracker from './assets/projects/attendance_tracking_system.webp';
 import events_sathyabama from './assets/projects/event-sathyabama.webp';
 
-import codingo from './assets/certificates/codingo.png';
-import digital_leader from './assets/certificates/cloud_digital_leader_nov_2025.png';
-import dev_wiz from './assets/certificates/dev_wiz.png';
-import nptel from './assets/certificates/programming_dsa_algo_nptel.jpg';
+import codingo from './assets/certificates/codingo.webp';
+import digital_leader from './assets/certificates/cloud_digital_leader_nov_2025.webp';
+import dev_wiz from './assets/certificates/dev_wiz.webp';
+import nptel from './assets/certificates/programming_dsa_algo_nptel.webp';
 
 const Data = {
 	skills: [

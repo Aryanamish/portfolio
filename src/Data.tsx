@@ -18,6 +18,8 @@ import python from './assets/mask_svg/python.svg';
 import cloud from './assets/mask_svg/baseline-cloud.svg';
 
 const Data = {
+	email: 'aryanamish385@gmail.com',
+	name: {first_name: "Aryan", last_name: "Amish"},
 	skills: [
 		'Python',
 		'HTML5',
@@ -79,7 +81,7 @@ const Data = {
 					icon: 'logos:aws',
 				},
 				{
-					name: 'AWS',
+					name: 'Netlify',
 					icon: 'skill-icons:netlify-light', 
 				},
 			],

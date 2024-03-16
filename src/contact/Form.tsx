@@ -12,6 +12,7 @@ interface FormData {
 	subject: string;
 	message: string;
 }
+import Data from '../Data'
 
 const Form = (props: {className: string}) => {
 	const contactForm = React.useRef<HTMLFormElement>(null);
@@ -91,7 +92,7 @@ const Form = (props: {className: string}) => {
 						(emailError ? 'opacity-100' : 'opacity-0')
 					}>
 					"The message could not be sent successfully. Please reach out to me at
-					'aryanamish385@gmail.com'"
+					'{Data.email}'"
 				</div>
 				<form
 					onSubmit={handleSubmit}

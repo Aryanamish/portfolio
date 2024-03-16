@@ -23,10 +23,10 @@ function Hero() {
 						<span className="text-skin-highlight text-xl">I'm ,</span>
 					</div>
 					<div>
-						<span className="text-6xl lg:text-9xl text-skin-secondary">Aryan</span>
+						<span className="text-6xl lg:text-9xl text-skin-secondary">{Data.name.first_name}</span>
 					</div>
 					<div>
-						<span className="text-6xl lg:text-9xl text-skin-secondary">Amish</span>
+						<span className="text-6xl lg:text-9xl text-skin-secondary">{Data.name.last_name}</span>
 					</div>
 					<div>
 						<span className="text-skin-secondary" id="intro">

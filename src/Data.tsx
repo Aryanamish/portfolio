@@ -19,6 +19,7 @@ import cloud from './assets/mask_svg/baseline-cloud.svg';
 
 const Data = {
 	skills: [
+		'Python',
 		'HTML5',
 		'CSS3',
 		'Tailwind CSS',
@@ -79,7 +80,7 @@ const Data = {
 				},
 				{
 					name: 'AWS',
-					icon: 'skill-icons:netlify-light',
+					icon: 'skill-icons:netlify-light', 
 				},
 			],
 		},

@@ -1,23 +1,38 @@
 import {useState} from 'react';
 import Logo from './Logo';
+import {sections} from '../DataType';
+import Data from '../Data/Data';
+
+interface Links {
+	section: sections;
+	link: string;
+}
 
 const NavBar = () => {
-	const links = [
+	const links: Links[] = [
 		{
-			text: 'project',
-			link: '#project',
+			section: 'home',
+			link: '#hero',
 		},
 		{
-			text: 'Certificates',
-			link: '#cert',
+			section: 'projects',
+			link: '#projects',
 		},
 		{
-			text: 'Skills',
-			link: '#skill',
+			section: 'certificates',
+			link: '#certificates',
 		},
 		{
-			text: 'Contact',
+			section: 'skills',
+			link: '#skills',
+		},
+		{
+			section: 'contact',
 			link: '#contact',
+		},
+		{
+			section: 'socials',
+			link: '#socials',
 		},
 	];
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -40,13 +55,17 @@ const NavBar = () => {
 								</div>
 								<div className="hidden md:block">
 									<div className="ml-4 flex items-center">
-										{links.map((link) => {
+										{links.map((link, idx) => {
+											const string =
+												link.section.slice(0, 1).toUpperCase() +
+												link.section.slice(1);
+											if (Data.checkSection(link.section) === false) return;
 											return (
 												<a
-													key={link.text + link.link}
+													key={string + link.link + String(idx)}
 													href={link.link}
 													className="text-gray-300 hover:bg-skin-fill hover:text-white px-3 py-2 rounded-md text-lg">
-													{link.text}
+													{string}
 												</a>
 											);
 										})}
@@ -95,14 +114,17 @@ const NavBar = () => {
 								isMobileMenuOpen ? 'block' : 'hidden'
 							} md:hidden w-full`}>
 							<div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-								{links.map((link) => {
+								{links.map((link, idx) => {
+									const string =
+										link.section.slice(0, 1).toUpperCase() + link.section.slice(1);
+									if (Data.checkSection(link.section) === false) return;
 									return (
 										<a
-											key={link.text + link.link}
+											key={link.link + String(idx) + string}
 											onClick={() => setIsMobileMenuOpen(false)}
 											href={link.link}
 											className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-											{link.text}
+											{string}
 										</a>
 									);
 								})}

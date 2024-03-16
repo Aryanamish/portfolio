@@ -1,6 +1,6 @@
 import React from 'react';
 import Cards2 from './Cards2';
-import Data from '../Data';
+import Data from '../Data/Data';
 
 function Projects(props: {
 	setZoomed: React.Dispatch<React.SetStateAction<boolean>>;
@@ -9,7 +9,7 @@ function Projects(props: {
 		<div>
 			<div className="flex gap-x-4 gap-y-10 flex-wrap justify-center">
 				{/* <Cards2 /> */}
-				{Data.projects.map((e, idx) => {
+				{Data.projects?.map((e, idx) => {
 					return (
 						<Cards2
 							cardZoomed={props.setZoomed}

@@ -1,4 +1,4 @@
-import Data from '../Data';
+import Data from '../Data/Data';
 import KeenSlider from './KeenSlider';
 
 // import Certificate2 from './Certificate2';

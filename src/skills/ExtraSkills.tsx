@@ -1,8 +1,9 @@
-import Icons from './Icons';
+import Icons from '../Components/Icons';
+import React from 'react';
 
 function ExtraSkills(props: {
 	text: string;
-	icons: Array<string>;
+	icons: (string | JSX.Element)[];
 	animateIcon?: string;
 	animateDiv?: string;
 }) {
@@ -15,10 +16,10 @@ function ExtraSkills(props: {
 					</span>
 				</div>
 				<div className="flex gap-2 md:gap-5 max-w-xl flex-wrap">
-					{props.icons.map((icon) => {
+					{props.icons.map((icon, idx) => {
 						return (
 							<Icons
-								key={icon}
+								key={idx}
 								className="flex justify-center items-center w-16 h-16 transition-all duration-500 cursor-pointer"
 								icon={icon}
 								iconClass="w-full h-full"

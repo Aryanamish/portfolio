@@ -1,3 +1,10 @@
+# Files to Change if you are cloning this Repo
+
+- index.html
+- public/manifest.json
+- redirect.js
+- Data.tsx
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

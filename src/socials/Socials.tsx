@@ -1,16 +1,8 @@
-import {Icon} from '@iconify/react';
-import {useState} from 'react';
+import Icons from '../Components/Icons';
 import Layout from './Layout';
-import Data from '../Data';
+import Data from '../Data/Data';
 
 function Socials() {
-	const mouse_over = [];
-	for (let i = 0; i < Data.socials.length; i++) {
-		mouse_over.push(false);
-	}
-
-	const [isMouseOver, setIsMouseOver] = useState(mouse_over);
-
 	return (
 		<Layout>
 			<div className="flex flex-col lg:flex-row px-10 h-full w-full">
@@ -20,39 +12,19 @@ function Socials() {
 					</span>
 				</div>
 				<div className="flex justify-center items-center gap-3 flex-grow">
-					{Data.socials.map((e, idx) => {
+					{Data.socials?.map((e, idx) => {
 						return (
 							<a
 								key={e.links + String(idx)}
-								onMouseEnter={() => {
-									const mouse_over = [];
-									for (let i = 0; i < Data.socials.length; i++) {
-										mouse_over.push(false);
-									}
-									mouse_over[idx] = true;
-									setIsMouseOver(mouse_over);
-								}}
-								onMouseLeave={() => {
-									const mouse_over = [];
-									for (let i = 0; i < Data.socials.length; i++) {
-										mouse_over.push(false);
-									}
-									setIsMouseOver(mouse_over);
-								}}
 								href={e.links}
 								target="_blank"
 								rel="noreferrer"
 								className="hover:scale-125 transition-all duration-500">
 								<div className="w-10 h-10 text-secondary">
-									<Icon
+									<Icons
 										icon={e.icon}
-										className={
-											'transition-all w-full h-full' +
-											' ' +
-											(() => {
-												return isMouseOver[idx] === true ? 'animate-bounce' : '';
-											})()
-										}
+										animateIcon={'animate-bounce'}
+										animate={'scale-105'}
 									/>
 								</div>
 							</a>

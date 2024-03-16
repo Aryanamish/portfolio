@@ -3,7 +3,7 @@ import React from 'react';
 
 const ZoomCenterOnClick = (props: {
 	children: JSX.Element;
-	zoomed: (state:boolean)=>void;
+	zoomed: (state: boolean) => void;
 	initialState: boolean;
 	state: boolean;
 	backdrop: boolean;

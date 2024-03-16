@@ -8,47 +8,56 @@ import NavBar from './navbar/NavBar';
 import Skills from './skills/Skills';
 import Socials from './socials/Socials';
 import React from 'react';
+import Data from './Data/Data';
 
 function App() {
 	const [projectZoomed, setProjectZoomed] = React.useState(false);
+
 	return (
 		<>
 			<NavBar />
 			<div className="flex justify-center items-center w-full h-full bg-skin-fill pt-32">
 				<div className="bg-skin-fill container">
 					<div className="scroll-snap-container px-2 flex sm:gap-20 gap-10 flex-col overflow-y-auto relative">
-						<div className="flex flex-col gap-20 lg:gap-5">
+						<div className="flex flex-col gap-20 lg:gap-5" id="hero">
 							<Hero></Hero>
 						</div>
-						<div id="project" className="pt-10">
-							<ScrollAnimate
-								disabled={projectZoomed}
-								className={'transition-all animation-duration-300'}
-								toggleClass="opacity-0"
-								animateClass="animate__fadeInRight">
-								<SectionTitle>Projects</SectionTitle>
-								<Projects setZoomed={setProjectZoomed} />
-							</ScrollAnimate>
-						</div>
-						<div id="cert" className="pt-10">
-							<ScrollAnimate
-								className="transition-all animation-duration-300"
-								toggleClass="opacity-0"
-								animateClass="animate__fadeInLeft">
-								<SectionTitle>Certificates</SectionTitle>
-								<Certificate />
-							</ScrollAnimate>
-						</div>
+						{Data.checkSection('projects') && (
+							<div id="projects" className="pt-10">
+								<ScrollAnimate
+									disabled={projectZoomed}
+									className={'transition-all animation-duration-300'}
+									toggleClass="opacity-0"
+									animateClass="animate__fadeInRight">
+									<SectionTitle>Projects</SectionTitle>
+									<Projects setZoomed={setProjectZoomed} />
+								</ScrollAnimate>
+							</div>
+						)}
+						{Data.checkSection('certificates') && (
+							<div id="certificates" className="pt-10">
+								<ScrollAnimate
+									className="transition-all animation-duration-300"
+									toggleClass="opacity-0"
+									animateClass="animate__fadeInLeft">
+									<SectionTitle>Certificates</SectionTitle>
+									<Certificate />
+								</ScrollAnimate>
+							</div>
+						)}
 						{/* TODO skills is overflow on iphone (small screens) */}
-						<div id="skill" className="pt-10">
-							<ScrollAnimate
-								className="transition-all animation-duration-300"
-								toggleClass="opacity-0"
-								animateClass="animate__fadeInRight">
-								<SectionTitle>Skills</SectionTitle>
-								<Skills />
-							</ScrollAnimate>
-						</div>
+						{Data.checkSection('skills') && (
+							<div id="skills" className="pt-10">
+								<ScrollAnimate
+									className="transition-all animation-duration-300"
+									toggleClass="opacity-0"
+									animateClass="animate__fadeInRight">
+									<SectionTitle>Skills</SectionTitle>
+									<Skills />
+								</ScrollAnimate>
+							</div>
+						)}
+
 						<div id="contact" className="pt-20">
 							<ScrollAnimate
 								className="transition-all animation-duration-300"
@@ -58,9 +67,11 @@ function App() {
 								<Contact />
 							</ScrollAnimate>
 						</div>
-						<div className="">
-							<Socials />
-						</div>
+						{Data.checkSection('socials') && (
+							<div className="" id="socials">
+								<Socials />
+							</div>
+						)}
 					</div>
 				</div>
 			</div>

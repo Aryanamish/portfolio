@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import Button from '../Components/Button';
 import emailjs from '@emailjs/browser';
 import Loader from '../Components/Loader';
-import EmailJs from '../email';
+import EmailJs from '../Data/email';
 import {Icon} from '@iconify/react';
 interface FormData {
 	name: string;
@@ -12,7 +12,7 @@ interface FormData {
 	subject: string;
 	message: string;
 }
-import Data from '../Data'
+import Data from '../Data/Data';
 
 const Form = (props: {className: string}) => {
 	const contactForm = React.useRef<HTMLFormElement>(null);
@@ -45,8 +45,7 @@ const Form = (props: {className: string}) => {
 					EmailJs.PUBLIC_KEY
 				)
 				.then(
-					(result) => {
-						console.log('Success: ', result.text);
+					() => {
 						setSendingMail(false);
 						setEmailError(false);
 						setSuccess(true);
@@ -91,8 +90,8 @@ const Form = (props: {className: string}) => {
 						'text-highlight text-lg w-full ' +
 						(emailError ? 'opacity-100' : 'opacity-0')
 					}>
-					"The message could not be sent successfully. Please reach out to me at
-					'{Data.email}'"
+					"The message could not be sent successfully. Please reach out to me at '
+					{Data.hero.email}'"
 				</div>
 				<form
 					onSubmit={handleSubmit}

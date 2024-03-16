@@ -1,19 +1,23 @@
 import Sphere from './Sphere';
 import ExtraSkills from './ExtraSkills';
-import Data from '../Data';
+import Data from '../Data/Data';
 
 function Skills() {
 	return (
 		<>
 			<div className="flex flex-col gap-10">
-				<Sphere />
+				<Sphere items={Data.skills?.sphere || []} />
 
-				{Data.extra_skills.map((e) => {
+				{Data.skills?.extra_skills?.map((e, idx) => {
 					const d = [];
 					for (let i = 0; i < e.data.length; i++) {
 						d.push(e.data[i].icon);
 					}
-					return <ExtraSkills key={e.text} text={e.text} icons={d} />;
+					if (d.length > 0)
+						return (
+							<ExtraSkills key={e.text + String(idx)} text={e.text} icons={d} />
+						);
+					else return <></>;
 				})}
 			</div>
 		</>

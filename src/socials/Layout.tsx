@@ -1,4 +1,3 @@
-
 function Layout(props: {children: string | JSX.Element | JSX.Element[]}) {
 	return (
 		<div>

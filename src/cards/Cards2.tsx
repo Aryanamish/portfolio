@@ -12,7 +12,7 @@ import {Icon} from '@iconify/react';
 export default function MediaCard(props: {
 	number: string;
 	domain: string;
-	image: string;
+	image?: string;
 	title: string;
 	desc: string | React.ReactNode;
 	github?: string;
@@ -21,9 +21,7 @@ export default function MediaCard(props: {
 	cardZoomed: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
 	const [isOpen, __setIsOpen] = React.useState(props.state);
-	const setIsOpen = (
-		state: boolean
-	) => {
+	const setIsOpen = (state: boolean) => {
 		props.cardZoomed(state);
 		__setIsOpen(state);
 	};
@@ -40,9 +38,11 @@ export default function MediaCard(props: {
 				zoomed={setIsOpen}
 				initialState={false}>
 				<Card sx={{maxWidth: 345}} className="">
-					<motion.div className="m-2 bg-skin-highlight p-2 rounded-md">
-						<Img src={props.image} className="h-[140px]" alt={props.title} />
-					</motion.div>
+					{props.image && (
+						<motion.div className="m-2 bg-skin-highlight p-2 rounded-md">
+							<Img src={props.image} className="h-[140px]" alt={props.title} />
+						</motion.div>
+					)}
 					<CardContent>
 						<Typography gutterBottom variant="h5" component="div">
 							{props.title}

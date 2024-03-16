@@ -3,17 +3,18 @@ import {useEffect} from 'react';
 import Typewriter from 'typewriter-effect/dist/core';
 import Button from '../Components/Button';
 import HeroImage from './HeroImage';
-import Data from '../Data';
+import Data from '../Data/Data';
 
 function Hero() {
 	useEffect(() => {
-		new Typewriter('#intro', {
-			strings: Data.type_writer,
-			autoStart: true,
-			delay: 50,
-			deleteSpeed: 50,
-			loop: true,
-		});
+		if (Data.hero.type_writer)
+			new Typewriter('#intro', {
+				strings: Data.hero.type_writer,
+				autoStart: true,
+				delay: 50,
+				deleteSpeed: 50,
+				loop: true,
+			});
 	});
 	return (
 		<div className="h-full w-full">
@@ -23,14 +24,18 @@ function Hero() {
 						<span className="text-skin-highlight text-xl">I'm ,</span>
 					</div>
 					<div>
-						<span className="text-6xl lg:text-9xl text-skin-secondary">{Data.name.first_name}</span>
+						<span className="text-6xl lg:text-9xl text-skin-secondary">
+							{Data.hero.first_name}
+						</span>
 					</div>
 					<div>
-						<span className="text-6xl lg:text-9xl text-skin-secondary">{Data.name.last_name}</span>
+						<span className="text-6xl lg:text-9xl text-skin-secondary">
+							{Data.hero.last_name}
+						</span>
 					</div>
 					<div>
 						<span className="text-skin-secondary" id="intro">
-							DSA, Machine Learning, Web Development
+							{Data.hero.type_writer?.join(', ')}
 						</span>
 					</div>
 					<div className="mt-10">

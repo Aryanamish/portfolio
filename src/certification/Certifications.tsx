@@ -5,7 +5,7 @@ import KeenSlider from './KeenSlider';
 function Certifications() {
 	return (
 		<div className="flex flex-row justify-center items-center">
-			<KeenSlider data={Data.certificates} />
+			{Data.certificates && <KeenSlider data={Data.certificates} />}
 		</div>
 	);
 }

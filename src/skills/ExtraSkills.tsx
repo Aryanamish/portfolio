@@ -1,5 +1,4 @@
 import Icons from '../Components/Icons';
-import React from 'react';
 
 function ExtraSkills(props: {
 	text: string;

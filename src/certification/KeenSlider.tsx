@@ -3,15 +3,9 @@ import {useKeenSlider} from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import {Icon} from '@iconify/react';
 import Img from '../Components/IMG';
+import {Certificate} from '../DataType';
 
-interface CertData {
-	label: string;
-	desc: string;
-	link?: string;
-	imagePath: string;
-	provider?: string;
-}
-const KeenSlider = (props: {data: CertData[]}) => {
+const KeenSlider = (props: {data: Certificate[]}) => {
 	const data = props.data;
 	const [currentState, setCurrentState] = useState<number>(0);
 	const [sliderRef, instanceRef] = useKeenSlider(
@@ -46,7 +40,7 @@ const KeenSlider = (props: {data: CertData[]}) => {
 	return (
 		<div className="w-[400px] sm:w-[500px] flex flex-col bg-white gap-4">
 			<div ref={sliderRef} className="bg-white keen-slider">
-				{data.map((item: CertData, index: number) => (
+				{data.map((item: Certificate, index: number) => (
 					<div className="keen-slider__slide w-full" key={index + item.label}>
 						<div className="flex items-center justify-center w-full h-28 flex-col">
 							<span className="font-bold text-xl">{item.label}</span>

@@ -39,14 +39,15 @@ function Hero() {
 						</span>
 					</div>
 					<div className="mt-10">
+
 						<Button.Action
 							onClick={() => {
-								const a = document.querySelector('[href="#project"]');
+								const a = document.querySelector('[href="#projects"]');
 								if (a instanceof HTMLElement) {
 									a.click();
 								}
 							}}
-						/>
+							/>
 					</div>
 				</div>
 				<div className="justify-center flex-1 items-center  hidden lg:flex pr-10">

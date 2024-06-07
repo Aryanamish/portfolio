@@ -7,8 +7,9 @@ import cloud from '../assets/mask_svg/baseline-cloud.svg';
 const Hero = {
 	first_name: 'Aryan',
 	last_name: 'Amish',
+	description:"Member Technical Staff at Zoho an experienced Full Stack Developer and DevOps Engineering",
 	email: 'aryanamish385+portfolio@gmail.com',
-	type_writer: ['Full Stack Developer', 'Dev Ops', 'Data Structure'],
+	// type_writer: ['Full Stack Developer', 'Dev Ops', 'Data Structure'],
 	masks_svgs: [python, cpp, java, docker, cloud],
 };
 

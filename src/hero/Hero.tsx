@@ -19,24 +19,29 @@ function Hero() {
 	return (
 		<div className="h-full w-full">
 			<div className="flex flex-col lg:flex-row gap-20">
-				<div className="flex flex-col flex-1 items-center lg:items-end justify-center">
+				<div className="flex flex-col flex-1 items-center lg:items-center">
 					<div>
-						<span className="text-skin-highlight text-xl">I'm ,</span>
+						<h1 className="text-skin-highlight text-xl">I'm ,</h1>
 					</div>
 					<div>
-						<span className="text-6xl lg:text-9xl text-skin-secondary">
+						<h1 className="text-6xl lg:text-9xl text-skin-secondary">
 							{Data.hero.first_name}
-						</span>
+						</h1>
 					</div>
 					<div>
-						<span className="text-6xl lg:text-9xl text-skin-secondary">
+						<h1 className="text-6xl lg:text-9xl text-skin-secondary">
 							{Data.hero.last_name}
-						</span>
+						</h1>
 					</div>
 					<div>
-						<span className="text-skin-secondary" id="intro">
+						<h2 className="text-lg lg:text-md text-skin-secondary">
+							{Data.hero.description}
+						</h2>
+					</div>
+					<div>
+						<h3 className="text-skin-secondary" id="intro">
 							{Data.hero.type_writer?.join(', ')}
-						</span>
+						</h3>
 					</div>
 					<div className="mt-10">
 

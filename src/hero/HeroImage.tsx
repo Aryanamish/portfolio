@@ -5,6 +5,7 @@ import {useEffect, useState} from 'react';
 
 export default function HeroImage() {
 	const svgs = Data.hero.masks_svgs;
+	console.log(svgs)
 	const [svgIndex, setSvgIndex] = useState(0);
 
 	useEffect(() => {

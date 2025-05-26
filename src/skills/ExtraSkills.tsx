@@ -1,4 +1,4 @@
-import Icons from '../component/Icons';
+import Icons from '../components/Icons';
 
 function ExtraSkills(props: {
 	text: string;

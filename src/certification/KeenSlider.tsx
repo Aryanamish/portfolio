@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useKeenSlider} from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import {Icon} from '@iconify/react';
-import Img from '../component/IMG';
+import Img from '../components/IMG';
 import {Certificate} from '../DataType';
 
 const KeenSlider = (props: {data: Certificate[]}) => {

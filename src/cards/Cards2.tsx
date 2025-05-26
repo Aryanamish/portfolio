@@ -5,8 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {motion} from 'framer-motion';
-import Img from '../component/IMG';
-import ZoomCenterOnClick from '../component/ZoomCenterOnClick';
+import Img from '../components/IMG';
+import ZoomCenterOnClick from '../components/ZoomCenterOnClick';
 import {Icon} from '@iconify/react';
 
 export default function MediaCard(props: {

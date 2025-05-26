@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 //@ts-expect-error this library dosent have typescript
 import Typewriter from 'typewriter-effect/dist/core';
-import Button from '../component/Button';
+import Button from '../components/Button';
 import HeroImage from './HeroImage';
 import Data from '../Data/Data';
 import Resume from '../resume/Resume';

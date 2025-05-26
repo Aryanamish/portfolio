@@ -1,9 +1,10 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 //@ts-expect-error this library dosent have typescript
 import Typewriter from 'typewriter-effect/dist/core';
-import Button from '../Components/Button';
+import Button from '../components/Button';
 import HeroImage from './HeroImage';
 import Data from '../Data/Data';
+import Resume from '../resume/Resume';
 
 function Hero() {
 	useEffect(() => {
@@ -44,15 +45,13 @@ function Hero() {
 						</h3>
 					</div>
 					<div className="mt-10">
+						<Resume>
 
-						<Button.Action
-							onClick={() => {
-								const a = document.querySelector('[href="#projects"]');
-								if (a instanceof HTMLElement) {
-									a.click();
-								}
-							}}
+							<Button.Action
+								text="Resume"
+
 							/>
+						</Resume>
 					</div>
 				</div>
 				<div className="justify-center flex-1 items-center  hidden lg:flex pr-10">

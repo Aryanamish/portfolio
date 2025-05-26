@@ -2,7 +2,8 @@ import {Icon} from '@iconify/react';
 import React, {ReactNode, useState} from 'react';
 
 function ButtonAction(props: {
-	onClick: (event: React.MouseEvent<HTMLDivElement>) => void;
+	onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
+	text: string
 	mouseOver?: boolean;
 }) {
 	const [isMouseover, setIsMouseOver] = useState(false);
@@ -32,7 +33,7 @@ function ButtonAction(props: {
 				</div>
 			</div>
 			<div className="bg-skin-secondary px-5 rounded-r-md flex justify-center items-center">
-				<span className="text-skin-fill font-bold">Learn More</span>
+				<span className="text-skin-fill font-bold">{props.text}</span>
 			</div>
 		</div>
 	);

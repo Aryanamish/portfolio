@@ -1,7 +1,7 @@
 import Projects from './cards/Projects';
 import Certificate from './certification/Certifications';
-import ScrollAnimate from './Components/ScrollAnimate';
-import SectionTitle from './Components/SectionTitle';
+import ScrollAnimate from './components/ScrollAnimate';
+import SectionTitle from './components/SectionTitle';
 import Contact from './contact/Contact';
 import Hero from './hero/Hero';
 import NavBar from './navbar/NavBar';
@@ -9,13 +9,13 @@ import Skills from './skills/Skills';
 import Socials from './socials/Socials';
 import React, { useEffect } from 'react';
 import Data from './Data/Data';
+import Resume from './resume/Resume';
 
 function App() {
 	const [projectZoomed, setProjectZoomed] = React.useState(false);
 	useEffect(()=>{
 		const hash = window.location.hash.slice(1)
 		if(hash !== ''){
-			console.log(document.getElementById(hash))
 			const t = setTimeout(()=>{
 				document.getElementById(hash)?.scrollIntoView({behavior:'smooth'})
 			}, 100)

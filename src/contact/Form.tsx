@@ -1,9 +1,9 @@
 import React from 'react';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
-import Button from '../Components/Button';
+import Button from '../components/Button';
 import emailjs from '@emailjs/browser';
-import Loader from '../Components/Loader';
+import Loader from '../components/Loader';
 import EmailJs from '../Data/email';
 import {Icon} from '@iconify/react';
 interface FormData {
@@ -52,7 +52,7 @@ const Form = (props: {className: string}) => {
 						formik.resetForm();
 					},
 					(error) => {
-						console.log('Error: ', error.text);
+						console.error('Error: ', error.text);
 						setSendingMail(false);
 						setSuccess(false);
 						setEmailError(true);

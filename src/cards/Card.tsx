@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Icon} from '@iconify/react';
-import Img from '../Components/IMG';
+import Img from '../components/IMG';
 function Card(props: {
 	number: string;
 	domain: string;
@@ -21,7 +21,6 @@ function Card(props: {
 			return e.offsetWidth + tolerance < e.scrollWidth;
 		}
 		if (textElement) {
-			console.log(isEllipsisActive(textElement));
 			setShowIcon(!isEllipsisActive(textElement));
 		}
 	}, [props.desc]);

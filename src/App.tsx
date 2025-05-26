@@ -9,7 +9,7 @@ import Skills from './skills/Skills';
 import Socials from './socials/Socials';
 import React, { useEffect } from 'react';
 import Data from './Data/Data';
-
+import cv from './assets/cv.pdf'
 function App() {
 	const [projectZoomed, setProjectZoomed] = React.useState(false);
 	useEffect(()=>{
@@ -25,6 +25,8 @@ function App() {
 	return (
 		<>
 			<NavBar />
+			<link rel="prefetch" href={cv} as="document" type="application/pdf" />
+
 			<div className="flex justify-center items-center w-full h-full bg-skin-fill pt-32">
 				<div className="bg-skin-fill container">
 					<div className="scroll-snap-container px-2 flex sm:gap-20 gap-10 flex-col overflow-y-auto relative">

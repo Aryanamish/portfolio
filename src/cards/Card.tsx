@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Icon} from '@iconify/react';
-import Img from '../components/IMG';
+import Img from '../component/IMG';
 function Card(props: {
 	number: string;
 	domain: string;

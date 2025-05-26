@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../components/Button';
+import Button from '../component/Button';
 
 function LetsTalk(props: {
 	onClick: (event: React.MouseEvent<HTMLDivElement>) => void;

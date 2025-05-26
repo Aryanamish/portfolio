@@ -1,4 +1,4 @@
-import Icons from '../components/Icons';
+import Icons from '../component/Icons';
 import Layout from './Layout';
 import Data from '../Data/Data';
 

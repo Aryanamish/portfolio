@@ -1,4 +1,4 @@
-import Img from '../component/IMG';
+import Img from '../components/IMG';
 import heros from '../assets/potrait.webp';
 import Data from '../Data/Data';
 import {useEffect, useState} from 'react';

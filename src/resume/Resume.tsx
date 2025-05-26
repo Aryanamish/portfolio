@@ -1,6 +1,6 @@
 import { useState, ReactNode } from 'react';
 import cv from '../assets/cv.pdf'
-import Button from '../component/Button';
+import Button from '../components/Button';
 
 export default function Resume(props: { children?: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);

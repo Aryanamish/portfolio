@@ -1,9 +1,9 @@
 import React from 'react';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
-import Button from '../component/Button';
+import Button from '../components/Button';
 import emailjs from '@emailjs/browser';
-import Loader from '../component/Loader';
+import Loader from '../components/Loader';
 import EmailJs from '../Data/email';
 import {Icon} from '@iconify/react';
 interface FormData {

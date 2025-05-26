@@ -9,7 +9,6 @@ import Skills from './skills/Skills';
 import Socials from './socials/Socials';
 import React, { useEffect } from 'react';
 import Data from './Data/Data';
-import Resume from './resume/Resume';
 
 function App() {
 	const [projectZoomed, setProjectZoomed] = React.useState(false);

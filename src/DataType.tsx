@@ -54,5 +54,6 @@ export type sections =
 	| 'projects'
 	| 'certificates'
 	| 'contact'
+	| 'resume'
 	| 'socials'
 	| 'home';

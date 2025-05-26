@@ -1,11 +1,13 @@
-import {useState} from 'react';
+import { ReactNode, useState } from 'react';
 import Logo from './Logo';
-import {sections} from '../DataType';
+import { sections } from '../DataType';
 import Data from '../Data/Data';
+import Resume from '../resume/Resume';
 
 interface Links {
 	section: sections;
-	link: string;
+	link?: string;
+	component?: ReactNode;
 }
 
 const NavBar = () => {
@@ -25,6 +27,12 @@ const NavBar = () => {
 		{
 			section: 'skills',
 			link: '#skills',
+		},
+		{
+			section: 'resume',
+			component: <><Resume>
+				<button className='text-gray-300 hover:bg-skin-fill hover:text-white px-3 py-2 rounded-md text-lg'>Resume</button>
+			</Resume></>,
 		},
 		{
 			section: 'contact',
@@ -60,14 +68,20 @@ const NavBar = () => {
 												link.section.slice(0, 1).toUpperCase() +
 												link.section.slice(1);
 											if (Data.checkSection(link.section) === false) return;
-											return (
-												<a
-													key={string + link.link + String(idx)}
-													href={link.link}
-													className="text-gray-300 hover:bg-skin-fill hover:text-white px-3 py-2 rounded-md text-lg">
-													{string}
-												</a>
-											);
+											if (link.link) {
+												return (
+													<a
+														key={string + link.link + String(idx)}
+														href={link.link}
+														className="text-gray-300 hover:bg-skin-fill hover:text-white px-3 py-2 rounded-md text-lg">
+														{string}
+													</a>
+												);
+											} else if (link.component) {
+												return (<div key={string + link.link + String(idx)}>
+													{link.component}
+												</div>)
+											}
 										})}
 									</div>
 								</div>
@@ -110,9 +124,8 @@ const NavBar = () => {
 							</div>
 						</div>
 						<div
-							className={`${
-								isMobileMenuOpen ? 'block' : 'hidden'
-							} md:hidden w-full`}>
+							className={`${isMobileMenuOpen ? 'block' : 'hidden'
+								} md:hidden w-full`}>
 							<div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
 								{links.map((link, idx) => {
 									const string =

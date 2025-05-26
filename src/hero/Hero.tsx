@@ -35,7 +35,7 @@ function Hero() {
 						</h1>
 					</div>
 					<div>
-						<h2 className="text-lg lg:text-md text-skin-secondary">
+						<h2 className="text-lg lg:text-md text-skin-secondary text-center">
 							{Data.hero.description}
 						</h2>
 					</div>

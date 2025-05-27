@@ -7,18 +7,21 @@
 			'https://github.com/Surya-Kumar-03/Property-Booking-System',
 		'/repo/steganography/': 'https://github.com/Aryanamish/Steganography',
 		'/repo/dev_wiz_hackthon/': 'https://github.com/Aryanamish/dev_wiz_hackthon',
+		'/repo/coupontouch/': 'https://github.com/Coupon-Touch/CouponTouch',
 	};
 	const VIDEO = {
 		'/video/events-sathyabama/':
 			'https://www.youtube.com/watch?v=iLgYvN-qO4c&ab_channel=Surya',
 		'/video/vorkinsta/':
 			'https://www.youtube.com/watch?v=C60mzqOQOc4&pp=ygUJdm9ya2luc3Rh',
+		'/video/coupontouch/': 'https://www.youtube.com/watch?v=wkW-eVtYuUc',
 	};
 	const SITE = {
 		'/site/events-sathyabama/': 'https://events.aryanamish.in/',
 		'/site/vorkinsta/': 'https://www.vorkinsta.com/',
 		'/site/property-booking-system/': 'https://hotel-rental.onrender.com/login',
 		'/site/steganography/': 'https://aryanamish.github.io/Steganography/',
+		'/site/coupontouch/': 'https://coupon-touch.vercel.app/albayan',
 	};
 
 	const CERT = {

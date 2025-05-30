@@ -31,7 +31,7 @@ const NavBar = () => {
 		{
 			section: 'resume',
 			component: <><Resume>
-				<button className='text-gray-300 hover:bg-skin-fill hover:text-white px-3 py-2 rounded-md text-lg'>Resume</button>
+				<a href="#resume" className='text-gray-300 hover:bg-skin-fill hover:text-white px-3 py-2 rounded-md text-lg'>Resume</a>
 			</Resume></>,
 		},
 		{

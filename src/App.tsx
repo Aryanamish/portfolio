@@ -16,7 +16,7 @@ function App() {
 		const hash = window.location.hash.slice(1)
 		if(hash !== ''){
 			const t = setTimeout(()=>{
-				document.getElementById(hash)?.scrollIntoView({behavior:'smooth'})
+				(document.querySelector(`[href='${window.location.hash}'`) as HTMLElement)?.click()
 			}, 100)
 			return ()=>clearTimeout(t)
 			

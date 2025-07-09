@@ -5,7 +5,7 @@ import steganography from '../assets/projects/steganography.webp';
 import vorkinsta from '../assets/projects/vorkinsta_chat.webp';
 import work_hour_tracker from '../assets/projects/attendance_tracking_system.webp';
 import events_sathyabama from '../assets/projects/event-sathyabama.webp';
-
+import coupontouch from '../assets/projects/coupon_touch.png'
 const Projects = [
 	{
 		domain: 'Web Development',
@@ -78,8 +78,17 @@ const Projects = [
 	},
 	{
 		domain: 'Web Development',
+		image: coupontouch,
+		title: 'CouponTouch',
+		website: 'https://coupontouch.aryanamish.in/albayan/',
+		github: 'https://github.com/Coupon-Touch/CouponTouch',
+		desc: 'A coupon and deals platform that helps users find and redeem discounts and promotional offers from various retailers and brands.',
+	},
+	{
+		domain: 'Web Development',
 		image: portfolio,
 		title: 'Personal Portfolio',
+		github: 'https://github.com/Aryanamish/portfolio',
 		desc: 'HTML, TailWind, JavaScript, EmailJs, ReactJs.',
 	},
 ];

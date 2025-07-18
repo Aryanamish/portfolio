@@ -1,5 +1,5 @@
 import React from 'react';
-import Cards2 from './Cards2';
+import MediaCard from './Cards';
 import Data from '../Data/Data';
 
 function Projects(props: {
@@ -11,7 +11,7 @@ function Projects(props: {
 				{/* <Cards2 /> */}
 				{Data.projects?.map((e, idx) => {
 					return (
-						<Cards2
+						<MediaCard
 							cardZoomed={props.setZoomed}
 							key={e.title + String(idx)}
 							number={String(idx + 1)}

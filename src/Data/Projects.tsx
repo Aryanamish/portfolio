@@ -82,7 +82,14 @@ const Projects = [
 		title: 'CouponTouch',
 		website: 'https://coupontouch.aryanamish.in/albayan/',
 		github: 'https://github.com/Coupon-Touch/CouponTouch',
-		desc: 'A coupon and deals platform that helps users find and redeem discounts and promotional offers from various retailers and brands.',
+		desc: <>
+		A full-stack coupon scratching system designed for digital marketing campaigns. 
+		Users can scan a QR code, verify via phone number, complete payments, 
+		and scratch a virtual coupon to reveal prizes. 
+		The platform includes an admin panel for managing prizes, setting bias rules, 
+		and tracking winners. 
+		Built with <b>ReactJS</b>, <b>GraphQL</b>, <b>Node.js</b>, and <b>MongoDB</b>, and deployed using <b>Docker</b> on <b>Google Cloud Run</b>.
+		</>
 	},
 	{
 		domain: 'Web Development',

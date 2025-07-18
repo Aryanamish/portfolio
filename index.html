@@ -2,7 +2,31 @@
 <html lang="en">
 
 <head>
-	<!-- <script crossOrigin="anonymous" src="//unpkg.com/react-scan/dist/auto.global.js"/> -->
+
+	<script>
+		(() => {
+			const localStorageToken = 'react-scan'
+			let reactScan = window.localStorage.getItem(localStorageToken) || 'false';
+			globalThis.toggleReactScan = ()=>{
+				reactScan = window.localStorage.getItem(localStorageToken) || 'false';
+				reactScan = reactScan === 'true' ? true : false;
+				if(reactScan){
+					window.localStorage.setItem(localStorageToken, false);
+				}else{
+					window.localStorage.setItem(localStorageToken, true);
+				}
+				window.location.reload()
+			}
+
+			if (window.ReactScan || reactScan === 'false') {
+				return;
+			}
+
+			// Load React Scan synchronously to ensure it loads before React
+			document.write('<script src="https://unpkg.com/react-scan/dist/auto.global.js" crossorigin="anonymous"><\/script>');
+			window.ReactScan = true;
+		})();
+	</script>
 	<script src="/redirect.js"></script>
 	<meta charset="utf-8" />
 	<link rel="icon" href="/favicon.svg" />
@@ -44,7 +68,7 @@
 					reload = true;
 				}
 			});
-			if(reload){
+			if (reload) {
 				window.location.reload()
 			}
 		}

@@ -10,7 +10,7 @@ const Hero = {
 	description: `Software Engineer with a strong foundation in Full Stack Development, 
 								DevOps, and Secure Software Design. I specialize in building scalable,
 								cloud-native applications using technologies like React, Next.js, Django, 
-								Docker, and AWS. Currently at Zoho as a Member of Technical Staff, 
+								Docker, and AWS. Currently at Zoho as a SDE-1, 
 								I’ve contributed to performance-critical features, web publishing tools, 
 								and encryption systems.`,
 	email: 'aryanamish385+portfolio@gmail.com',

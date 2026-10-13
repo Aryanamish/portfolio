@@ -28,6 +28,9 @@ export default defineConfig({
     //   },
     // }),
   ],
+  server: {
+    host: "0.0.0.0",
+  },
   build: {
     assetsInlineLimit: 0, // Set to 0 to disable inlining completely
     outDir: "./build",

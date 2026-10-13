@@ -21,9 +21,11 @@
 		"formik": "^2.4.2",
 		"framer-motion": "^12.23.6",
 		"keen-slider": "^6.8.6",
+		"pdfjs-dist": "6.3.289",
 		"react": "^19.1.0",
 		"react-compiler-runtime": "19.1.0-rc.2",
 		"react-dom": "^19.1.0",
+		"react-pdf": "^11.0.0",
 		"typewriter-effect": "^2.19.0",
 		"yup": "^1.2.0"
 	},

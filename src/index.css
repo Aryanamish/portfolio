@@ -29,6 +29,19 @@
 	background: rgb(39, 89, 88);
 }
 
+/* Resume popup scrollbar */
+.resume-scroll::-webkit-scrollbar-track {
+	background: rgb(226, 232, 240);
+}
+
+.resume-scroll::-webkit-scrollbar-thumb {
+	background: rgb(100, 116, 139);
+}
+
+.resume-scroll::-webkit-scrollbar-thumb:hover {
+	background: rgb(51, 65, 85);
+}
+
 body {
 	font-family: 'Itim', cursive;
 	overflow-x: hidden;

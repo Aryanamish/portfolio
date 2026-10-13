@@ -3,6 +3,7 @@ export interface PersonalInfo {
 	last_name: string;
 	email: string;
 	description:string;
+	resume_name?: string;
 	type_writer?: string[];
 	masks_svgs?: (string | JSX.Element)[];
 }

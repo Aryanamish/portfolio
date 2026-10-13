@@ -14,6 +14,8 @@ const Hero = {
 								Amazon as a System Development Engineer; previously at Zoho, where I contributed
 								to web publishing tools, performance-critical features, and encryption systems.`,
 	email: 'aryanamish385+portfolio@gmail.com',
+	// file name used when the resume is downloaded
+	resume_name: 'Aryan_Amish_SDE_Amazon.pdf',
 	// type_writer: ['Full Stack Developer', 'Dev Ops', 'Data Structure'],
 	masks_svgs: [python, cpp, java, docker, cloud],
 };

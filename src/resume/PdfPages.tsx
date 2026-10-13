@@ -1,13 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
-import workerSrc from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
+import workerSrc from 'pdfjs-dist/legacy/build/pdf.worker.min.mjs?url';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 
+// legacy build of the PDF engine, so older phone browsers can run it (see the alias in vite.config.ts)
 pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
 
 // Draws every page of the PDF as a canvas, so it scrolls like normal content.
 // Used on phones, where the browser's embedded PDF viewer only shows the first page.
-export default function PdfPages(props: { file: string; onReady: () => void }) {
+export default function PdfPages(props: {
+  file: string;
+  onReady: () => void;
+  onError: () => void;
+}) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(0);
   const [numPages, setNumPages] = useState(0);
@@ -29,16 +34,12 @@ export default function PdfPages(props: { file: string; onReady: () => void }) {
   // pages stay hidden until all of them are drawn, then fade in together
   const ready = numPages > 0 && renderedPages >= numPages;
 
-  // tells the popup to remove its loader
-  const { onReady } = props;
-  const done = ready || failed;
+  // tells the popup to remove its loader, or to show its fallback
+  const { onReady, onError } = props;
   useEffect(() => {
-    if (done) onReady();
-  }, [done, onReady]);
-
-  const message = (text: string) => (
-    <div className="p-6 text-center text-slate-800">{text}</div>
-  );
+    if (failed) onError();
+    else if (ready) onReady();
+  }, [ready, failed, onReady, onError]);
 
   return (
     <div ref={containerRef} className="relative w-full">
@@ -49,9 +50,9 @@ export default function PdfPages(props: { file: string; onReady: () => void }) {
           onLoadError={() => setFailed(true)}
           externalLinkTarget="_blank"
           loading=""
-          error={message('Could not show the resume here. Use the Download button instead.')}
+          error=""
           className={
-            'transition-opacity duration-300 ' + (done ? 'opacity-100' : 'opacity-0')
+            'transition-opacity duration-300 ' + (ready ? 'opacity-100' : 'opacity-0')
           }
         >
           {Array.from({ length: numPages }, (_, idx) => (
@@ -61,6 +62,7 @@ export default function PdfPages(props: { file: string; onReady: () => void }) {
               width={width}
               renderTextLayer={false}
               loading=""
+              onRenderError={() => setFailed(true)}
               onRenderSuccess={() => setRenderedPages((count) => count + 1)}
               className="border-b border-slate-300"
             />

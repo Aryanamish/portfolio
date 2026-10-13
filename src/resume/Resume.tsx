@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, lazy, Suspense, ReactNode } from 'react';
+import { useState, useEffect, useCallback, lazy, Suspense, Component, ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { Icon } from '@iconify/react';
 import cv from '../assets/cv.pdf';
@@ -12,16 +12,43 @@ const PdfPages = lazy(() => import('./PdfPages'));
 const showPdfPages =
   !navigator.pdfViewerEnabled || window.matchMedia('(pointer: coarse)').matches;
 
+// catches a crash of the PDF renderer (e.g. a browser too old to run it) so the rest of the site keeps working
+class RendererBoundary extends Component<{ onError: () => void; children: ReactNode }> {
+  state = { crashed: false };
+  static getDerivedStateFromError() {
+    return { crashed: true };
+  }
+  componentDidCatch() {
+    this.props.onError();
+  }
+  render() {
+    return this.state.crashed ? null : this.props.children;
+  }
+}
+
+// how long the renderer may take before the fallback is shown
+const RENDER_TIMEOUT = 15000;
+
 export default function Resume(props: { children?: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const [pagesReady, setPagesReady] = useState(false);
   const onPagesReady = useCallback(() => setPagesReady(true), []);
+  const [pagesFailed, setPagesFailed] = useState(false);
+  const onPagesError = useCallback(() => setPagesFailed(true), []);
 
   const togglePopup = () => {
     setPagesReady(false);
+    setPagesFailed(false);
     setIsOpen(!isOpen);
   };
+
+  // give up on the renderer if it never finishes
+  useEffect(() => {
+    if (!isOpen || !showPdfPages || pagesReady || pagesFailed) return;
+    const timer = setTimeout(() => setPagesFailed(true), RENDER_TIMEOUT);
+    return () => clearTimeout(timer);
+  }, [isOpen, pagesReady, pagesFailed]);
 
   // stop the page behind the popup from scrolling while the resume is open
   useEffect(() => {
@@ -77,13 +104,28 @@ export default function Resume(props: { children?: ReactNode }) {
           }
           style={{ WebkitOverflowScrolling: 'touch' }}
         >
-          {showPdfPages ? (
+          {pagesFailed ? (
+            <div className="flex h-full flex-col items-center justify-center gap-4 p-6 text-center text-slate-800">
+              <span className="text-lg">The resume can&apos;t be previewed in this browser.</span>
+              <a
+                href={cv}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 rounded-full bg-slate-800 px-5 py-2 font-semibold text-white transition-colors hover:bg-slate-600"
+              >
+                <Icon icon="mdi:open-in-new" className="h-5 w-5" />
+                Open resume
+              </a>
+            </div>
+          ) : showPdfPages ? (
             <div className="relative w-full">
               {/* one loader for the whole wait, so its animation is never restarted */}
               {!pagesReady && <ResumeLoader />}
-              <Suspense fallback={null}>
-                <PdfPages file={cv} onReady={onPagesReady} />
-              </Suspense>
+              <RendererBoundary onError={onPagesError}>
+                <Suspense fallback={null}>
+                  <PdfPages file={cv} onReady={onPagesReady} onError={onPagesError} />
+                </Suspense>
+              </RendererBoundary>
             </div>
           ) : (
             <iframe

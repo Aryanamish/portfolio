@@ -5,7 +5,9 @@ import steganography from '../assets/projects/steganography.webp';
 import vorkinsta from '../assets/projects/vorkinsta_chat.webp';
 import work_hour_tracker from '../assets/projects/attendance_tracking_system.webp';
 import events_sathyabama from '../assets/projects/event-sathyabama.webp';
-import coupontouch from '../assets/projects/coupon_touch.png'
+import coupontouch from '../assets/projects/coupon_touch.png';
+import trippinai from '../assets/projects/trippinai.png';
+
 const Projects = [
 	{
 		domain: 'Web Development',
@@ -15,13 +17,42 @@ const Projects = [
 		github: 'https://github.com/Events-Sathyabama/Events-Sathyabama',
 		desc: (
 			<>
-				Developed a streamlined event management system for a college environment
-				using <b>Next.js</b> for SEO and load time optimization. Backend powered by
-				Django and Django Rest Framework, featuring secure <b>JWT-based login</b>.
-				Revolutionized approval processes,
-				<b> cutting approval times by 50%</b>. Implemented email notifications for
-				effective communication and a one-click event application, resulting in a{' '}
-				<b>40% increase in application volume</b>.
+				A college-specific event management system built with <b>Django</b>,{' '}
+				<b>MySQL</b> and <b>JWT</b> for <b>17000+ students</b>, 1000+ faculty and
+				administrators, with real-time tracking, streamlined event approvals and
+				automated notifications. SEO-focused SSR with <b>Next.js</b> gave{' '}
+				<b>50% faster load times</b>, 70% quicker event announcements and 60% more
+				efficient approvals, increasing event participation by 45% across campuses.
+				Approval mechanisms and single-click applications led to a{' '}
+				<b>150% surge in application volume</b>.
+				<br />
+				<br />
+				<b>Tech:</b> NextJS, TypeScript, Material UI, Tailwind CSS, REST APIs, JWT,
+				Django, MySQL
+			</>
+		),
+	},
+	{
+		domain: 'Artificial Intelligence',
+		image: trippinai,
+		title: 'TrippinAI',
+		desc: (
+			<>
+				A <b>multi-agent conversational travel planner</b> with 5+ specialized
+				agents that turns open-ended user preferences into personalized
+				recommendations. It ranks options through a{' '}
+				<b>7-stage non-compensatory pipeline</b> with a 5-level preference intensity
+				scale and hard-constraint gating, so a strong score on one attribute can't
+				hide a poor score on something the user cares about. A wrapper on{' '}
+				<b>LangGraph</b> turns its rigid workflow into a dynamic multi-agent system
+				with cross-agent communication,{' '}
+				<b>cutting redundant pipeline runs by 60%</b> on follow-up queries.
+				Structured trip-state memory replaces raw chat history to reduce
+				hallucination, keeping context accurate past <b>30+ conversation turns</b>.
+				<br />
+				<br />
+				<b>Tech:</b> NextJS, Python, LangGraph, FastAPI, PostgreSQL, Redis, Docker,
+				Kubernetes
 			</>
 		),
 	},

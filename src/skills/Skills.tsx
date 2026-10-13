@@ -5,17 +5,13 @@ import Data from '../Data/Data';
 function Skills() {
 	return (
 		<>
-			<div className="flex flex-col gap-10">
+			<div className="flex flex-col gap-6 lg:gap-8">
 				<Sphere items={Data.skills?.sphere || []} />
 
 				{Data.skills?.extra_skills?.map((e, idx) => {
-					const d = [];
-					for (let i = 0; i < e.data.length; i++) {
-						d.push(e.data[i].icon);
-					}
-					if (d.length > 0)
+					if (e.data.length > 0)
 						return (
-							<ExtraSkills key={e.text + String(idx)} text={e.text} icons={d} />
+							<ExtraSkills key={e.text + String(idx)} text={e.text} icons={e.data} />
 						);
 					else return <></>;
 				})}
